@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+        <meta name="description" content="A café to meet your new senior furry friend.">
+        <title> The Heirloom</title>
+
+        <!--favicon-->
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <!--font link-->
+        <link rel="stylesheet" href="https://use.typekit.net/hpm1sut.css">
+        <!--link to CSS and JS-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body id="top" data-theme="light">
+        <header>
+
+            <!--find and place a logo img-->
+            <img src="images/lght_mde_logo.svg" alt="logo image">
+            <div class="web-title">
+                <h1>The Heirloom</h1>
+            </div>
+
+            <!--navigation-->
+            <nav>
+                <ul class="navList">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="cats.html">Cats</a></li>
+                    <li><a href="cafe.html">Café</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="visit_contact.html#visit">Visit Us</a></li>
+                    <li><a href="visit_contact.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!--Dark & Light Mode button-->
+            <button type="button" id="theme-switch" class="theme-switch" aria-label="Switch to dark mode">
+                <img src="images/light_sun.svg" alt="dark brown colored outline of a sun" class="theme-sun">
+                <img src="images/dark_moon.svg" alt="light beige colored outline of a moon" class="theme-moon">
+            </button>
+        </header>
+
+        <main>
+            <!--Home Page-->
+            <section class="hero" id="home">
+
+                <img src="images/cats_eating.jpg" alt="hero image">
+                <div class="hero-text">
+                    <h2>A warm cup. A cozy lap. A second chance.</h2>
+                    <p>Enjoy a warm cup of coffee and meet our lovable senior cats. At The Heirloom, every visit brings
+                        comfort, connection, and the possibility of a forever home.</p>
+
+                    <!--hero buttons-->
+                    <ul class="hero-bttns">
+                        <li><a href="cats.html">Meet the Cats</a></li>
+                        <li><a href="cafe.html">Café Menu</a></li>
+                        <li><a href="visit_contact.html#visit">Visit the Café</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--Meet the Cats Section-->
+            <section class="cats-preview" id="meet-cats">
+                <h2>Meet the Cats</h2>
+
+                <!--small link to full page-->
+                <a href="cats.html" class="section-link">View All Cats &rArr;</a>
+                <!--Cat Carousel-->
+                <div class="cat-carousel">
+
+                    <!--previous button-->
+                    <button type="button" class="carousel-prev" aria-label="previous cats" disabled>
+
+                        <img src="images/left_arrow.svg" alt="" class="prev_arrow">
+                    </button>
+                    <div class="cat-track">
+
+                        <!-- TEMPORARY: Simon's card is a placeholder. Remove this article when JavaScript dynamically generates the cat cards using cats-data.js.-->
+                        <!--Offline requirement: Load data using a regular script tag, not fetch(), to support file://.-->
+
+
+                        <!--cat cards-->
+                        <article class="cat-card" data-cat-id="Simon">
+                            <div class="cat-img">
+
+                                <!--Insert Photo of Simon-->
+                                <img src="images/simon.png" alt="cat photo of Simon">
+
+                                <!--favorite button-->
+                                <button type="button" class="fav-bttn" aria-label="Add Simon to Favorites"
+                                    aria-pressed="false">
+                                    <img src="images/favorite_icon.svg" alt="" class="favorite_icon">
+                                </button>
+                            </div>
+                            <div class="cat-info">
+                                <h3>Simon</h3>
+                                <p class="cat-age">Age: 12 years</p>
+
+                                <!--Add better descriptions later-->
+                                <p class="cat-description">A gentle companion that loves afternoon naps under the sun.
+                                </p>
+
+                                <!--Link to learn more-->
+                                <a href="cats.html#simon" class="learn-more">Learn More</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!--next button-->
+                    <button type="button" class="carousel-next" aria-label="next cats">
+
+                        <img src="images/right_arrow.svg" alt="" class="next_arrow">
+                    </button>
+                </div>
+            </section>
+
+            <!--Cafe Preview-->
+            <section class="cafe-preview" id="cafe-preview">
+                <div class="cafe-img">
+                    <img src="images/lattes.png" alt="photo of senior cats eating in a straight line" class="cats_eat">
+                </div>
+                <div class="cafe-info">
+                    <h2>The Café</h2>
+                    <p>Come for the coffee, stay for the cats! Settle into our cofy café with a delicious drink, a sweet
+                        treat, and wonderful company.</p>
+                    <a href="cafe.html" class="cafe-bttn">View Menu</a>
+                </div>
+                <div>
+                    <h3>Hours</h3>
+                    <p>Mon - Fri: <time datetime="11:00">11am</time> - <time datetime="18:00">6pm</time></p>
+                    <p>Sat - Sun: <time datetime="10:00">10am</time> - <time datetime="18:00">6pm</time></p>
+                </div>
+            </section>
+
+            <!--Info Preview-->
+            <section class="info-preview" id="why-senior-cats">
+
+                <!--small link to full page-->
+                <div class="section-heading">
+                    <a href="info.html#senior-cats" class="section-link">Learn More &rArr;</a>
+                </div>
+                <ul class="cat-facts">
+                    <li class="fact-blurb">
+
+                        <img src="images/fact_icon2.svg" alt="icon" class="fact-icon">
+                        <div class="fact-text">
+                            <h3>Love Has No Age</h3>
+                            <p>Older cats still have so much affection, personality, and companionship to share.</p>
+                        </div>
+                    </li>
+                    <li class="fact-blurb">
+
+                        <img src="images/fact_icon1.svg" alt="icon" class="fact-icon">
+                        <div class="fact-text">
+                            <h3>Often Overlooked</h3>
+                            <p>Senior cats are often passed over younger cats and kittens, all while having just as much
+                                love to give.</p>
+                        </div>
+                    </li>
+                    <li class="fact-blurb">
+                        <img src="images/fact_icon3.svg" alt="icon" class="fact-icon">
+                        <div class="fact-text">
+                            <h3>Calm Companions</h3>
+                            <p>Many older cats enjoy quieter routines and make wonderful companions for a cozy.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <!--Footer-->
+            <footer class="footer">
+                <div class="footer-content">
+
+                    <!--Cafe Branding-->
+                    <div class="footer-brand">
+
+                        <img src="images/lght_mde_logo.svg" alt="image of cat silhouette in antique brooch" class="footer-logo">
+                        <span class="footer-title">The Heirloom</span>
+                    </div>
+
+                    <!--footer hours-->
+                    <div>
+                        <h2>Hours</h2>
+                        <p>Mon - Fri: <time datetime="11:00">11am</time> - <time datetime="18:00">6pm</time></p>
+                        <p>Sat - Sun: <time datetime="10:00">10am</time> - <time datetime="18:00">6pm</time></p>
+                    </div>
+                    <!--Social Media Links-->
+                    <h2>Socials</h2>
+                    <ul class="social-links">
+                        <li class="instagram">
+                            <a href="https://instagram.com/" aria-label="Instagram"><img src="images/instagram.svg" alt="" class=ig_icon>
+                            </a>
+                        </li>
+                        <li class="tiktok">
+                            <a href="https://tiktok.com/" aria-label="TikTok"><img src="images/tiktok.svg" alt="" class=tt_icon>
+                            </a>
+                        </li>
+                        <li class="email">
+                            <a href="visit_contact.html#contact" aria-label="Contact Us"><img src="images/email_lght_mde.svg" alt="" class="email_icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Copyright-->
+                <p class="footer-copyright">
+                    &copy; 2026 The Heirloom. All rights reserved.
+                </p>
+
+                <!--Back to Top-->
+                <a href="#top" class="back-to-top" aria-label="Back to top"> &uarr;</a>
+            </footer>
+    </body>
+
+    </html>

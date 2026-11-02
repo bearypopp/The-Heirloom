@@ -1,0 +1,72 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/***ROOTS***/
+:root{
+
+    /**colors**/
+    --warm-ivory: #F6F0E8;
+    --soft-blush: #E8D7D6;
+    --muted-sage: #A8B2A1;
+    --dusty-rose: #A56A6A;
+    --vintage-plum: #6B4C63;
+    --charcoal-brown: #4A403D;
+
+    /**Dark Mode Colors**/
+    --deep-plum: #302A30;
+    --smokey-plum: #493c47;
+
+    /**Shadow**/
+    --box-shadow: 0 3px 12px rgba(61, 48, 57, 0.12); 
+
+    /**fonts**/
+    --font-logo: "LaDanse", serif;
+    --font-header: "Jensen Pro", serif;
+    --font-body: "Bembo", serif;
+}
+

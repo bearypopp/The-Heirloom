@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+
+    <!--Change the description for this meta tag to match the current webpage-->
+    <meta name="description"
+        content="Plan a relaxing visit to The Heirloom senior cat café or get in touch with our team. We look forward to welcoming you!">
+    <title> The Heirloom | Visit and Contact Us</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!--font link-->
+    <link rel="stylesheet" href="https://use.typekit.net/hpm1sut.css">
+    <!--link to CSS and JS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top" data-theme="light">
+    <header>
+
+        <!--find and place a logo img-->
+        <img src="images/lght_mde_logo.svg" alt="logo image">
+        <div class="web-title">
+            <h1>The Heirloom</h1>
+        </div>
+
+        <!--navigation-->
+        <nav>
+            <ul class="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="cafe.html">Café</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="visit_contact.html#visit">Visit Us</a></li>
+                <li><a href="visit_contact.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!--Dark & Light Mode button-->
+        <button type="button" id="theme-switch" class="theme-switch" aria-label="Switch to dark mode">
+            <img src="images/light_sun.svg" alt="dark brown colored outline of a sun" class="theme-sun">
+            <img src="images/dark_moon.svg" alt="light beige colored outline of a moon" class="theme-moon">
+        </button>
+    </header>
+    <main>
+        <!--Hero section of the page-->
+        <section class="hero" id="visit-hero">
+            <!--Change image to something else-->
+            <img src="images/visit_us.jpg" alt="hero image">
+            <div class="hero-text">
+                <h2>Come Spend Some Time With Us</h2>
+                <p>Whether you're stopping by for a warm cup of coffee, spending time with our lovely sneior cats, or
+                    simply have a question, we'd love to hear from you. Plan your visit or get in touch with our team
+                    below.</p>
+            </div>
+        </section>
+
+        <!--Visit planning-->
+        <section class="visit-section" id="visit">
+            <div class="visit-info">
+                <h2>Plan your Visit</h2>
+                <p> We'd love to welcome you to The Heirloom! Spend a cozy afternoon enjoying café favorites and getting
+                    to know our treasured senior cats. Reserve a visit below to plan your time with us.</p>
+            </div>
+            <form id="visit-form">
+                <p class="visit-note">Planning a visit with more than 5 guests? Please call prior to filling out a form
+                    so we can help accomodate your group comfortably.</p>
+                <div class="form-field">
+                    <label for="visit-date">Preferred Date</label>
+                    <input type="date" id="visit-date" name="visitDate" required>
+                </div>
+                <div class="form-field">
+                    <label for="visit-time">Preferred Time</label>
+                    <input type="time" id="visit-time" name="visitTime" required>
+                </div>
+                <div class="form-field">
+                    <label for="party-size">Party Size</label>
+                    <select id="party-size" name="partySize" required>
+                        <option value="">Select Party Size</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6+">6+ Guests</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit">Reserve a Visit</button>
+            </form>
+
+            <aside class="visit-hours">
+                <h3>Café Hours:</h3>
+                <p>Monday - Friday: 11 AM - 6 PM</p>
+                <p>Saturday - Sunday: 10 AM - 6 PM</p>
+            </aside>
+        </section>
+
+        <!--Contact Us Form-->
+        <section class="contact-section" id="contact">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Have a question about our café, senior cats, or adoption process? We'd love to hear from you! Send us
+                    a message and our team will be happy to help.</p>
+            </div>
+
+            <form id="contact-form">
+                <!--Name-->
+                <div class="form row">
+                    <div class="form-field">
+                        <label for="contact-first-name">First Name <span>*</span></label>
+                        <input type="text" id="contact-first-name" name="firstName" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="contact-last-name">Last Name<span>*</span></label>
+                        <input type="text" id="contact-last-name" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="contact-email">Email Address<span>*</span></label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="contact-phone">Phone Number<span>*</span></label>
+                    <input type="tel" id="contact-phone" name="phone" autocomplete="tel" required>
+                </div>
+
+                <!--Preferred Method of Contact-->
+                <fieldset class="form-field">
+                    <legend>Preferred Contact Method<span>*</span></legend>
+                    <label>
+                        <input type="radio" name="contactMethod" value="email" required>Email</label>
+                    <label>
+                        <input type="radio" name="contactMethod" value="phone" required>Phone</label>
+                </fieldset>
+
+                <!--comments-->
+                <div class="form-field">
+                    <label for="contact-message">Comments<span>*</span></label>
+
+                    <textarea id="contact-message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Submit Form</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+
+            <!--Cafe Branding-->
+            <div class="footer-brand">
+
+                <img src="images/lght_mde_logo.svg" alt="image of cat silhouette in antique brooch" class="footer-logo">
+                <span class="footer-title">The Heirloom</span>
+            </div>
+            <div>
+                <h2>Hours</h2>
+                <p>Mon - Fri: <time datetime="11:00">11am</time> - <time datetime="18:00">6pm</time></p>
+                <p>Sat - Sun: <time datetime="10:00">10am</time> - <time datetime="18:00">6pm</time></p>
+            </div>
+            <!--Social Media Links-->
+            <h2>Socials</h2>
+            <ul class="social-links">
+                <li class="instagram">
+                    <a href="https://instagram.com/" aria-label="Instagram"><img src="images/instagram.svg" alt=""
+                            class=ig_icon>
+                    </a>
+                </li>
+                <li class="tiktok">
+                    <a href="https://tiktok.com/" aria-label="TikTok"><img src="images/tiktok.svg" alt="" class=tt_icon>
+                    </a>
+                </li>
+                <li class="email">
+                    <a href="visit_contact.html#contact" aria-label="Contact Us"><img src="images/email_lght_mde.svg"
+                            alt="" class="email_icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Copyright-->
+        <p class="footer-copyright">
+            &copy; 2026 The Heirloom. All rights reserved.
+        </p>
+
+        <!--Back to Top-->
+        <a href="#top" class="back-to-top" aria-label="Back to top"> &uarr;</a>
+    </footer>
+</body>
+
+</html>

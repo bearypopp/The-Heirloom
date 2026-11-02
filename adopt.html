@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+
+    <!--Change the description for this meta tag to match the current webpage-->
+    <meta name="description"
+        content="Ready to welcome a senior cat into your home? Apply to adopt of The Heirloom's treasured felines and give them a loving home they deserve.">
+    <title> The Heirloom | Adoption Form</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!--font link-->
+    <link rel="stylesheet" href="https://use.typekit.net/hpm1sut.css">
+    <!--link to CSS and JS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top" data-theme="light">
+    <header>
+
+        <!--find and place a logo img-->
+        <img src="images/lght_mde_logo.svg" alt="logo image">
+        <div class="web-title">
+            <h1>The Heirloom</h1>
+        </div>
+
+        <!--navigation-->
+        <nav>
+            <ul class="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="cafe.html">Café</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="visit_contact.html#visit">Visit Us</a></li>
+                <li><a href="visit_contact.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!--Dark & Light Mode button-->
+        <button type="button" id="theme-switch" class="theme-switch" aria-label="Switch to dark mode">
+            <img src="images/light_sun.svg" alt="dark brown colored outline of a sun" class="theme-sun">
+            <img src="images/dark_moon.svg" alt="light beige colored outline of a moon" class="theme-moon">
+        </button>
+    </header>
+    <main>
+        <!--Adoption Section-->
+        <section class="hero" id="adopt-hero">
+            <!--Change image to something else-->
+            <img src="images/adoption_icon.svg" alt="hero image">
+            <div class="hero-text">
+                <h2>Interested in Adopting?</h2>
+                <p>Every cat at The Heirloom is waiting for a special place to call home. Our adoption process is
+                    designed to help you find a wonderful match while ensuring each of our treasured cats receives the
+                    love, patience, and care they deserve.</p>
+            </div>
+        </section>
+
+        <!--Adoption Form-->
+        <section class="adoption" id="adopt-form">
+            <div class="adoption-layout">
+                <div class="adoption-form-section">
+                    <h2>Adoption Form</h2>
+                    <form id="adoption-form">
+                        <!--will first and last name side by side using CSS without affecting rest of form-->
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="adopt-first-name">First Name<span>*</span></label>
+                                <input type="text" id="adopt-first-name" name="firstName" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="adopt-last-name">Last Name<span>*</span></label>
+                                <input type="text" id="adopt-last-name" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="adopt-email">Email Address<span>*</span></label>
+                            <input type="email" id="adopt-email" name="email" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="adopt-phone">Phone Number<span>*</span></label>
+                            <input type="tel" id="adopt-phone" name="phone" autocomplete="tel" required>
+                        </div>
+
+                        <!--Preferred Method of Contact-->
+                        <fieldset class="form-field">
+                            <legend>Preferred Contact Method<span>*</span></legend>
+                            <label>
+                                <input type="radio" name="contactMethod" value="email" required>Email</label>
+                            <label>
+                                <input type="radio" name="contactMethod" value="phone" required>Phone</label>
+                        </fieldset>
+
+                        <div class="form-field">
+                            <label for="cat-interest">Cat of Interest<span>*</span></label>
+                            <select id="cat-interest" name="catInterest" required>
+                                <option value="">Select a cat</option>
+                                <option value="simon">Simon</option>
+                                <option value="clementine">Clementine</option>
+                                <option value="mister-max">Mister Max</option>
+                                <option value="milo">Milo</option>
+                                <option value="junnie">Junnie</option>
+                            </select>
+                        </div>
+
+                        <!--Home Address-->
+                        <fieldset class="address-field">
+                            <legend>Home Address<span>*</span></legend>
+                            <div class="form-field">
+                                <label for="adopt-street">Street Address<span>*</span></label>
+                                <input type="text" id="adopt-street" name="street" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="adopt-street-2">Street Address 2 (Optional)</label>
+                                <input type="text" id="adopt-street-2" name="street2"
+                                    placeholder="apt, suite, unit #, etc." autocomplete="address-line2">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="adopt-city">City<span>*</span></label>
+                                    <input type="text" id="adopt-city" name="city" required>
+                                </div>
+
+                                <!--States is a dropdown menu with all 50 states as an option-->
+                                <div class="form-field">
+                                    <label for="adopt-state">State<span>*</span></label>
+                                    <select id="adopt-state" name="state" required>
+                                        <option value="">Select a State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="adopt-zip">ZIP Code<span>*</span></label>
+                                    <input type="text" id="adopt-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}"
+                                        maxlength="5" title="Please enter a 5-digit ZIP code" required>
+                                </div>
+                            </div>
+
+                            <!--Information on Potential Adopter's living-->
+                            <div class="form-row">
+
+                                <!--Living situation-->
+                                <div class="form-field">
+                                    <label for="livingSituation">Living Situation<span>*</span></label>
+                                    <select id="livingSituation" name="livingSituation" required>
+                                        <option value="">Select one</option>
+                                        <option value="house">House</option>
+                                        <option value="apartment">Apartment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+
+                                    <!--Shown when Other is selected-->
+                                    <div class="conditional-field" id="living-other-field" hidden>
+                                        <label for="livingOther">Please Specify</label>
+
+                                        <input type="text" id="livingOther" name="livingOther"
+                                            placeholder="Describe your living situation" disabled>
+                                    </div>
+                                </div>
+
+                                <!--Other Pets-->
+                                <div class="form-field">
+                                    <label for="otherPets">Do You Have Other Pets?</label>
+
+                                    <select id="otherPets" name="otherPets" required>
+                                        <option value="">Select one</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+
+                                    <!--Shown when yes is selected-->
+                                    <div class="conditional-field" id="pet-count-field" hidden>
+                                        <label for="petCount">How Many Pets?</label>
+
+                                        <input type="number" id="petCount" name="petCount" min="1" step="1"
+                                            placeholder="Number of pets" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--About potential adopter-->
+                            <div class="form-field">
+                                <label for="aboutAdopter">Tell Us About Yourself and Your Home <span>*</span></label>
+                                <textarea id="aboutAdopter" name="aboutAdopter" rows="5"
+                                    placeholder="Tell us about your household, lifestyle, and the home you hope to provide."
+                                    required></textarea>
+                            </div>
+
+                            <!--Adoption Form Submission-->
+                            <button type="submit" class="form-submit">Submit Adoption Interest Form</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <!--Adoption Information Sidebar-->
+                <aside class="adoption-info">
+                    <div class="adoption-info-block">
+                        <h3>What Happens Next?</h3>
+                        <p>Once your application is submitted, our team will carefully review your information and reach
+                            out using your preferred contact method. We'll help arrange a visit, answer questions and
+                            guide you through the next steps towards welcoming your new feline family member.</p>
+                    </div>
+
+                    <div class="adoption-info-block">
+                        <h3>Things to Keep in Mind</h3>
+                        <p>Every senior cat deserves to feel safe, loved, and right at home. Some may settle in quickly,
+                            while others need a little extrea time to find their favorite sunny spot or feel comfortable
+                            exploring. A gentle routine, cozy spaces, and plenty of love can help your new family member
+                            feel like they've always belonged.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+
+            <!--Cafe Branding-->
+            <div class="footer-brand">
+
+                <img src="images/lght_mde_logo.svg" alt="image of cat silhouette in antique brooch" class="footer-logo">
+                <span class="footer-title">The Heirloom</span>
+            </div>
+            <div>
+                <h2>Hours</h2>
+                <p>Mon - Fri: <time datetime="11:00">11am</time> - <time datetime="18:00">6pm</time></p>
+                <p>Sat - Sun: <time datetime="10:00">10am</time> - <time datetime="18:00">6pm</time></p>
+            </div>
+            <!--Social Media Links-->
+            <h2>Socials</h2>
+            <ul class="social-links">
+                <li class="instagram">
+                    <a href="https://instagram.com/" aria-label="Instagram"><img src="images/instagram.svg" alt=""
+                            class=ig_icon>
+                    </a>
+                </li>
+                <li class="tiktok">
+                    <a href="https://tiktok.com/" aria-label="TikTok"><img src="images/tiktok.svg" alt="" class=tt_icon>
+                    </a>
+                </li>
+                <li class="email">
+                    <a href="visit_contact.html#contact" aria-label="Contact Us"><img src="images/email_lght_mde.svg"
+                            alt="" class="email_icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Copyright-->
+        <p class="footer-copyright">
+            &copy; 2026 The Heirloom. All rights reserved.
+        </p>
+
+        <!--Back to Top-->
+        <a href="#top" class="back-to-top" aria-label="Back to top"> &uarr;</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+
+    <!--Change the description for this meta tag to match the current webpage-->
+    <meta name="description"
+        content="Explore The Heirloom's café menui, featuring freshly brewed coffee, comforting teas, delicious pastries and seasonal treats.">
+    <title> The Heirloom | Café Menu</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!--font link-->
+    <link rel="stylesheet" href="https://use.typekit.net/hpm1sut.css">
+    <!--link to CSS and JS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top" data-theme="light">
+    <header>
+
+        <!--find and place a logo img-->
+        <img src="images/lght_mde_logo.svg" alt="logo image">
+        <div class="web-title">
+            <h1>The Heirloom</h1>
+        </div>
+
+        <!--navigation-->
+        <nav>
+            <ul class="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="cafe.html">Café</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="visit_contact.html#visit">Visit Us</a></li>
+                <li><a href="visit_contact.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!--Dark & Light Mode button-->
+        <button type="button" id="theme-switch" class="theme-switch" aria-label="Switch to dark mode">
+            <img src="images/light_sun.svg" alt="dark brown colored outline of a sun" class="theme-sun">
+            <img src="images/dark_moon.svg" alt="light beige colored outline of a moon" class="theme-moon">
+        </button>
+    </header>
+
+    <main>
+        <!--Café Menu Page-->
+        <section class="hero" id="cafe-hero">
+
+            <!--insert cafe or coffee img-->
+            <!--change the alt accordingly-->
+            <img src="images/cat_sleep_cafe.jpg" alt="Cafe interior">
+            <div class="cafe-text">
+                <h2>Café Menu</h2>
+                <p>Something warm, something sweet, and perhaps a little treat! Explore our selection of café favorites,
+                    seasonal delights, and comforting classics.</p>
+            </div>
+        </section>
+
+        <!--Café Menu Navigation-->
+        <nav class="menu-nav" aria-label="Café menu categories">
+            <ul class="menu-nav-list">
+                <li><a href=#coffee>Coffee</a></li>
+                <li><a href=#tea>Tea</a></li>
+                <li><a href=#pastries>Pastries</a></li>
+                <li><a href=#seasonal>Seasonal</a></li>
+            </ul>
+        </nav>
+
+        <!--Menu Customization note-->
+        <aside class="menu-addon" aria-label="Drink Customizations">
+            <p><strong>Syrups: </strong>Simple Syrup, Vanilla, Lavender, Kinako</p>
+            <p><strong>Complimentary Alternative Milks </strong>Oat, Almond, Soy</p>
+            <p><strong>Additional Charge: </strong>$0.50 per syrup addition, extra espresso, or matcha shot</p>
+        </aside>
+
+        <!--Coffee Section-->
+        <section class="menu-section" id="coffee">
+            <h2>Coffee</h2>
+            <div class="menu-grid">
+
+                <!--espresso-->
+                <article class="menu-card">
+
+                    <!--insert img of espresso-->
+                    <img src="images/espresso.jpg" alt="a double shot of espresso" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p class="menu-price">$3.00</p>
+                        <p class="menu-size">4oz cup</p>
+                        <p class="menu-temp">Hot only</p>
+                        <p class="menu-description">Two concentration shots of rich, aromatic espresso.</p>
+                    </div>
+                </article>
+
+                <!--macchiato-->
+                <article class="menu-card">
+
+                    <!--insert img of macchiato-->
+                    <img src="images/macchiato.jpg" alt="macchiato in a small cup topped with a dallop of milk foam."
+                        class="menu-img">
+                    <div class="menu-info">
+                        <h3>Macchiato</h3>
+                        <p class="menu-price">$3.50</p>
+                        <p class="menu-size">4oz cup</p>
+                        <p class="menu-temp">Hot only</p>
+                        <p class="menu-description">Two concentration shots of rich, aromatic espresso.</p>
+                    </div>
+                </article>
+
+                <!--cortado-->
+                <article class="menu-card">
+
+                    <!--insert img of cortado-->
+                    <img src="images/cortado.jpg" alt="a cortado served in a small glass wtih a thing layer of steamed milk"
+                        class="menu-img">
+                    <div class="menu-info">
+                        <h3>Cortado/Gibraltar</h3>
+                        <p class="menu-price">$3.75</p>
+                        <p class="menu-size">4oz cup</p>
+                        <p class="menu-temp">Hot only</p>
+                        <p class="menu-description">A balanced blend of espresso and warm steamed milk.</p>
+                    </div>
+                </article>
+
+                <!--cappuccino-->
+                <article class="menu-card">
+
+                    <!--insert img of cappuccino-->
+                    <img src="images/cappuccino.jpg" alt="cappuccino in a ceramic cup topped with thick milk foam" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Cappuccino</h3>
+                        <p class="menu-price">$4.25</p>
+                        <p class="menu-size">8oz cup</p>
+                        <p class="menu-temp">Hot only</p>
+                        <p class="menu-description">Shot of espresso with steamed milk and a thick layer of foam.</p>
+                    </div>
+                </article>
+
+                <!--Latte-->
+                <article class="menu-card">
+
+                    <!--insert img of latte-->
+                    <img src="images/iced_latte.jpg" alt="latte in a cermanic cup with latte art" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Latte</h3>
+                        <p class="menu-price">$4.75</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Espresso combined with milk for a creamy, smooth finish.</p>
+                    </div>
+                </article>
+
+                <!--Americano-->
+                <article class="menu-card">
+
+                    <!--insert img of americano-->
+                    <img src="images/americano.jpg" alt="black americano coffee served in a mug" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Americano</h3>
+                        <p class="menu-price">$3.50</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Espresso shot poured over water for a smooth, full-bodied coffee/p>
+                    </div>
+                </article>
+
+                <!--cold brew-->
+                <article class="menu-card">
+
+                    <!--insert img of cold brew-->
+                    <img src="images/cold_brew.jpg" alt="iced cold brew coffee in a clear glass with ice cubes" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Cold Brew</h3>
+                        <p class="menu-price">$4.50</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Iced only</p>
+                        <p class="menu-description">Slowly steeped coffee with a smooth, chocolatey flavor</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--Tea Section-->
+        <section class="menu-section" id="tea">
+            <h2>Tea</h2>
+            <div class="menu-grid">
+
+                <!--matcha Latte-->
+                <article class="menu-card">
+
+                    <!--insert img of matcha latte-->
+                    <img src="images/matcha_latte.jpg" alt="matcha latte in a glass" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Matcha Latte</h3>
+                        <p class="menu-price">$5.50</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Smooth ceremonial grade matcha from Japan, blended with milk for a
+                            rich, creamy, earthy finish.</p>
+                    </div>
+                </article>
+
+                <!--Matcha Americano-->
+                <article class="menu-card">
+
+                    <!--insert img of matcha americano-->
+                    <img src="images/matcha_cano.jpg" alt="matcha americano in a glass" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Matcha Americano</h3>
+                        <p class="menu-price">$4.75</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Smooth ceremonial grade matcha from Japan, whisked and poured over
+                            water for a bold, refreshing taste.</p>
+                    </div>
+                </article>
+                <!--hojicha-->
+                <article class="menu-card">
+
+                    <!--insert img of hojicha-->
+                    <img src="images/hojicha_latte.jpg" alt="hojicha latte with a warm, roasted-brown color and silky milk"
+                        class="menu-img">
+                    <div class="menu-info">
+                        <h3>Hojicha</h3>
+                        <p class="menu-price">$5.50</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Roasted Japanese green tea blended with creamy milk, offering warm,
+                            nutty notes.</p>
+                    </div>
+                </article>
+
+                <!--loose leaf tea-->
+                <article class="menu-card">
+
+                    <!--insert img of loose leaf-->
+                    <img src="images/tea.jpg" alt="Loose-leaf tea served in a cup." class="menu-img">
+                    <div class="menu-info">
+                        <h3>Loose Leaf Tea</h3>
+                        <p class="menu-price">$3.75</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot only</p>
+                        <p class="menu-description">A comforting selection of aromatic loose-leaf teas, freshly steeped
+                            to bring out their natural flavors.</p>
+                        <p class="tea-selection"><strong>Tea Selection: Earl Grey, Green Tea, Osmanthus, Jasmine,
+                                Oolong.</strong></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--Pastries Section-->
+        <section class="menu-section" id="pastries">
+            <h2>Tea</h2>
+            <div class="menu-grid">
+
+                <!--Almond Croissant-->
+                <article class="menu-card">
+
+                    <!--insert img of Almond Croissant-->
+                    <img src="images/almond_croissant.jpg" alt="almond croissant on a ceremic plate" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Almond Croissant</h3>
+                        <p class="menu-price">$4.75</p>
+                        <p class="menu-description">A buttery, flaky croissant filled with almond creama nd topped with powered suagr and toasted almonds.</p>
+                    </div>
+                </article>
+
+                <!--Black Sesame Shortbread-->
+                <article class="menu-card">
+
+                    <!--insert img of Black Sesame Shortbread-->
+                    <img src="images/" alt="black sesame cookie on a ceramic plate." class="menu-img">
+                    <div class="menu-info">
+                        <h3>Black Sesame Shortbread</h3>
+                        <p class="menu-price">$3.50</p>
+                        <p class="menu-description">Buttery shortbread cookies with toasted black sesame seeds.</p>
+                    </div>
+                </article>
+                <!--Lemon Riccotta Cake-->
+                <article class="menu-card">
+
+                    <!--insert img of Lemon Riccotta Cake-->
+                    <img src="images/lemon_ricotta_cake.jpg" alt="lemon riccotta cake on a ceramic plate"
+                        class="menu-img">
+                    <div class="menu-info">
+                        <h3>Lemon Riccotta Cake</h3>
+                        <p class="menu-price">$5.25</p>
+                        <p class="menu-description">A soft, light cake with a bright lemon zest and sweet finish.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--Seasonal Section-->
+        <section class="menu-section" id="seasonal">
+            <h2>Tea</h2>
+            <div class="menu-grid">
+
+                <!--Apple Chai-der-->
+                <article class="menu-card">
+
+                    <!--insert img of Apple Chai-der-->
+                    <img src="images/apple_chaider.jpg" alt="Apple Chai-der in a glass" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Apple Chai-der</h3>
+                        <p class="menu-price">$5.75</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">A cozy blend of spiced chai and crisp apple cider.</p>
+                    </div>
+                </article>
+
+                <!--Orange Spiced Latte-->
+                <article class="menu-card">
+
+                    <!--insert img of Orange Spiced Latte-->
+                    <img src="images/orange_spiced_latte.jpg" alt="latte topped with dried orange and spice dust in a glass" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Orange Spiced Latte</h3>
+                        <p class="menu-price">$6.00</p>
+                        <p class="menu-size">12oz cup</p>
+                        <p class="menu-temp">Hot/Iced</p>
+                        <p class="menu-description">Shot of espresso mixed with orange zest, cardamom syrup and milk for a bright citrus-y and floral twist.</p>
+                    </div>
+                </article>
+
+                 <!--Persimmon Almond Tart-->
+                <article class="menu-card">
+
+                    <!--insert img of Persimmon Almond Tart-->
+                    <img src="images/persimmon_tart.jpg" alt="Persimmon Almond Tart on a ceramic plate"
+                        class="menu-img">
+                    <div class="menu-info">
+                        <h3>Persimmon Almond Tart</h3>
+                        <p class="menu-price">$5.75</p>
+                        <p class="menu-description">A buttery tart filled with almond cream and topped with sweet persimmons.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+        <footer class="footer">
+            <div class="footer-content">
+    
+                <!--Cafe Branding-->
+                <div class="footer-brand">
+    
+                    <img src="images/lght_mde_logo.svg" alt="image of cat silhouette in antique brooch" class="footer-logo">
+                    <span class="footer-title">The Heirloom</span>
+                </div>
+    
+                <div>
+                    <h2>Hours</h2>
+                    <p>Mon - Fri: <time datetime="11:00">11am</time> - <time datetime="18:00">6pm</time></p>
+                    <p>Sat - Sun: <time datetime="10:00">10am</time> - <time datetime="18:00">6pm</time></p>
+                </div>
+                <!--Social Media Links-->
+                <h2>Socials</h2>
+                <ul class="social-links">
+                    <li class="instagram">
+                        <a href="https://instagram.com/" aria-label="Instagram"><img src="images/instagram.svg" alt=""
+                                class=ig_icon>
+                        </a>
+                    </li>
+                    <li class="tiktok">
+                        <a href="https://tiktok.com/" aria-label="TikTok"><img src="images/tiktok.svg" alt="" class=tt_icon>
+                        </a>
+                    </li>
+                    <li class="email">
+                        <a href="visit_contact.html#contact" aria-label="Contact Us"><img src="images/email_lght_mde.svg"
+                                alt="" class="email_icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!--Copyright-->
+            <p class="footer-copyright">
+                &copy; 2026 The Heirloom. All rights reserved.
+            </p>
+    
+            <!--Back to Top-->
+            <a href="#top" class="back-to-top" aria-label="Back to top"> &uarr;</a>
+        </footer>
+</body>
+
+</html>
