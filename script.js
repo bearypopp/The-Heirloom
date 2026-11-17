@@ -9,35 +9,81 @@ const cats = [
         name: "Simon",
         age: 12,
         image: "images/simon.png",
-        description: "A gentle companion that loves afternoon naps under the sun."
+        images: [
+            "images/simon.png",
+            "images/simon2.jpg"
+        ],
+        description: "A gentle companion that loves afternoon naps under the sun.",
+        nickname: "The Professional Napper",
+        personality: "A gentle old soul with a heart as warm as his favorite sunspot. Simon believes every day should include a good nap and a little affection.",
+        likes: "Sunbeams, warm blankets, and slow head scratches.",
+        quirks: "Will quietly follow you around until you sit down, then immediately claim the spot beside you.",
+        favorites: "Fleece blankets and sleepy afternoons."
     },
     {
         id: "mr.midnight",
         name: "Mr. Midnight",
         age: 14,
         image: "images/Mr.Midnight.png",
-        description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps."
+        images: [
+            "images/Mr.Midnight.png",
+            "images/mr.midnight2.jpg"
+        ],
+        description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps.",
+        nickname: "The Distinguished Gentleman",
+        personality:"A dignified gentleman with a surprisingly soft side. Mr. Midnight prefers quiet company, meaningful eye contact, and affection on his own terms.",
+        likes: "Peaceful evenings, gentle brushing, and a comfortable lap.",
+        quirks: "Stares at you like he's judging your life choices, then rewards you with the sweetest little head bump.",
+        favorites: "Velvet cushions and feather wands."
+        
     },
     {
         id: "miko",
         name: "Miko",
         age: 10,
         image: "images/Miko.png",
-        description: "A curious cat who loves exploring cozy corners."
+        images: [
+            "images/Miko.png",
+            "images/miko2.jpg"
+        ],
+        description: "A curious cat who loves exploring cozy corners.",
+        nickname: "The Curious Conversationalist",
+        personality: "A bright, chatty little explorer who has something to say about absolutely everything. Miko brings a spark of curiosity to even the quietest afternoons.",
+        likes: "Window watching, exploring new corners, and chatting with visitors.",
+        quirks: "Greets you with enthusiastic meows and insists on supervising whatever you're doing.",
+        favorites: "Crinkle balls and cardboard boxes."
     },
     {
         id: "poppy",
         name: "Poppy",
         age: 12,
         image: "images/Poppy.png",
-        description: "A sweet and very affectionate gal who loves all the attention."
+        images: [
+            "images/Poppy.png",
+            "images/poppy2.jpg"
+        ],
+        description: "A sweet and very affectionate gal who loves all the attention.",
+        nickname:  "The Affectionate Daydreamer",
+        personality: "A tenderhearted sweetheart with a playful streak. Poppy loves being adored, but she's equally content simply sharing a peaceful moment with someone she trusts.",
+        ikes: "Soft voices, gentle chin scratches, and cozy places to curl up.",
+        quirks: "Sticks her tongue out when she's especially relaxed, as if she's forgotten to put it away.",
+        favorites: "Plush pillows and soft stuffed mice."
     },
     {
         id: "cheddar",
         name: "Cheddar",
         age: 13,
         image: "images/Cheddar.png",
-        description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window."
+        images: [
+            "images/Cheddar.png",
+            "images/cheddar2"
+        ],
+        description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window.",
+        nickname: "The Lovable Oddball",
+        personality: "A charming little weirdo with big feelings and even bigger curiosity. Cheddar has a talent for turning ordinary moments into something unexpectedly entertaining.",
+        likes: "Following his favorite humans, investigating grocery bags, and being included in everything.",
+        quirks: "Occasionally gets distracted mid-play and forgets what he was doing, then acts like nothing happened.",
+        favorites: "Catnip pickles and paper bags."
     }
 ];
 
@@ -78,7 +124,7 @@ if (catGrid) {
 
 //favorite button clicked
 if (catGrid) {
-    catGrid.addEventListener("click", function (event) {
+    catGrid.addEventListener("click", function(event) {
         const favoriteButton = event.target.closest(".fav-bttn");
         if (!favoriteButton) return;
 
@@ -108,6 +154,8 @@ if (catGrid) {
 }
 
 //view cat profile
+let currentPhoto = 0;
+let activeCat = null;
 if(catGrid){
     catGrid.addEventListener("click", function(event){
         const profileBttn = event.target.closest(".learn-more");
@@ -119,16 +167,75 @@ if(catGrid){
             return cat.id === thisCat;
         });
 
+        //if the card is expanded, it will show the cat's info
         if(selectedCat){
+            activeCat = selectedCat;
+            currentPhoto = 0;
             const catInfo = document.querySelector("#cat-expanded");
 
             document.querySelector("#expanded-cat-name").textContent = selectedCat.name;
+            document.querySelector("#expanded-cat-nickname").textContent = selectedCat.nickname;
+            document.querySelector("#expanded-cat-age").innerHTML =  `<strong>Age:</strong> ${selectedCat.age} years`;
+            document.querySelector("#expanded-cat-img").innerHTML = `<img src="${selectedCat.images[0]}" alt="Photo of ${selectedCat.name}">`;
 
-            document.querySelector("#expanded-cat-age").textContent =  `Age: ${selectedCat.age} years`;
+            //headers for inside the expanded cat card (Age, etc.)
+            document.querySelector("#expanded-cat-personality").innerHTML = `<strong>Personality:</strong> ${selectedCat.personality}`;
+            document.querySelector("#expanded-cat-likes").innerHTML = `<strong>Likes:</strong> ${selectedCat.likes}`;
+            document.querySelector("#expanded-cat-quirks").innerHTML = `<strong>Quirks:</strong> ${selectedCat.quirks}`;
+            document.querySelector("#expanded-cat-favorites").innerHTML = `<strong>Favorite Things:</strong> ${selectedCat.favorites}`;
 
-            document.querySelector("#expanded-cat-img").innerHTML = `<img src="${selectedCat.image}" alt="Photo of ${selectedCat.name}">`;
+            //favorite button in expanded card  
+            const profileFav = document.querySelector("#expanded-favorite");
+            
+            profileFav.setAttribute(
+                "aria-pressed",
+                favorites.includes(selectedCat.id)
+            );
+            profileFav.dataset.catId = selectedCat.id;
+
 
             catInfo.showModal();
         }
     });
 }
+
+//closing the expanded cat profile
+ const catInfo = document.querySelector("#cat-expanded");
+ const closeProfile = document.querySelector(".expanded-close");
+
+ if(catInfo && closeProfile){
+    closeProfile.addEventListener("click", function(){
+        catInfo.close();
+    });
+}
+
+//selecting the next cat photo
+
+//when favorites is clicked in the expanded profile
+ const profileFav = document.querySelector("#expanded-favorite");
+
+ if(profileFav){
+    profileFav.addEventListener("click", function(){
+        const thisCat = profileFav.dataset.catId;
+
+        if(favorites.includes(thisCat)){
+            favorites = favorites.filter(function(id){
+                return id !== thisCat;
+            });
+        }
+        else{
+            favorites.push(thisCat);
+        }
+        localStorage.setItem("favoriteCats", JSON.stringify(favorites));
+        profileFav.setAttribute("aria-pressed",favorites.includes(thisCat));
+
+        // Update the matching gallery heart
+        const galleryFav = document.querySelector(
+           `.cat-card[data-cat-id="${thisCat}"] .fav-bttn` 
+        ); 
+
+        if(galleryFav){
+            galleryFav.setAttribute("aria-pressed", favorites.includes(thisCat));
+        }
+    });
+ }

@@ -703,11 +703,44 @@ header nav{
 }
 
 /**Expanded Cat Card**/
+.expanded-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.expanded-info > p{
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--charcoal-brown);
+}
+.expanded-info > p strong{
+    font-family: var(--font-accent);
+    color: var(--dusty-rose);
+    font-size: 1.37rem;
+    font-weight: bold;
+}
 .expanded-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: start;
+}
+#expanded-cat-name{
+    font-family: var(--font-accent);
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--charcoal-brown);
+}
+#expanded-cat-nickname{
+    font-family: var(--font-header);
+    font-style: italic;
+    color: var(--dusty-rose);
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 0.25rem;
+    letter-spacing: 0.6px;
+    line-height: 1.5;
 }
 #expanded-cat-img img{
     display: block;
@@ -741,4 +774,8 @@ header nav{
     width: 24px;
     height: 24px;
     object-fit: contain;
+    filter: grayscale(100%);
+}
+.expanded-fav-btn[aria-pressed="true"] img{
+    filter: none;
 }
