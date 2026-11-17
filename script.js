@@ -3,42 +3,42 @@
 
 //===============MTC Page Cat Cards==================//
 //cat data
-const cats= [
-{
-    id: "simon", 
-    name:"Simon",
-    age: 12,
-    image: "images/simon.png",
-    description: "A gentle companion that loves afternoon naps under the sun."
-},
-{
-    id: "mr.midnight",
-    name: "Mr.Midnight",
-    age: 14,
-    image: "images/Mr.Midnight.png",
-    description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps."
-},
-{
-    id: "miko",
-    name: "Miko",
-    age: 10,
-    image: "images/Miko.png",
-    description: "A curious cat who loves exploring cozy corners."
-},
-{
-    id: "poppy",
-    name: "Poppy",
-    age: 12,
-    image: "images/Poppy.png",
-    description: "A sweet and very affectionate gal who loves all the attention."
-},
-{
-    id: "cheddar",
-    name: "Cheddar",
-    age: 13,
-    image: "images/Cheddar.png",
-    description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window."
-}
+const cats = [
+    {
+        id: "simon",
+        name: "Simon",
+        age: 12,
+        image: "images/simon.png",
+        description: "A gentle companion that loves afternoon naps under the sun."
+    },
+    {
+        id: "mr.midnight",
+        name: "Mr. Midnight",
+        age: 14,
+        image: "images/Mr.Midnight.png",
+        description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps."
+    },
+    {
+        id: "miko",
+        name: "Miko",
+        age: 10,
+        image: "images/Miko.png",
+        description: "A curious cat who loves exploring cozy corners."
+    },
+    {
+        id: "poppy",
+        name: "Poppy",
+        age: 12,
+        image: "images/Poppy.png",
+        description: "A sweet and very affectionate gal who loves all the attention."
+    },
+    {
+        id: "cheddar",
+        name: "Cheddar",
+        age: 13,
+        image: "images/Cheddar.png",
+        description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window."
+    }
 ];
 
 /*=====Favorites Button======*/
@@ -59,7 +59,7 @@ if (catGrid) {
         <div class="cat-img">
             <img src="${cat.image}" alt="Photo of ${cat.name}">
 
-            <button type="button" class="fav-bttn" aria-label="Add ${cat.name} to favorites" aria-pressed="false">
+            <button type="button" class="fav-bttn" aria-label="Favorite ${cat.name}" aria-pressed="${favorites.includes(cat.id)}">
             <img src="images/favorite_icon.svg" alt="" class="favorite_icon">
         </div>
         <div class="cat-info">
@@ -77,30 +77,58 @@ if (catGrid) {
 }
 
 //favorite button clicked
-if(catGrid){
-    catGrid.addEventListener("click", function(event){
-        const favoriteButton= event.target.closest(".fav-bttn");
-        if(!favoriteButton) return;
+if (catGrid) {
+    catGrid.addEventListener("click", function (event) {
+        const favoriteButton = event.target.closest(".fav-bttn");
+        if (!favoriteButton) return;
 
         const catCard = favoriteButton.closest(".cat-card");
         const catId = catCard.dataset.catId;
 
-       if(favorites.includes(catId)){
+        if (favorites.includes(catId)) {
 
-        //removes the cat if already bookmarked
-        favorites = favorites.filter(function(id){
-            return id !== catId;
+            //removes the cat if already bookmarked
+            favorites = favorites.filter(function (id) {
+                return id !== catId;
+            });
+        }
+        else {
+
+            //adds the cat if not favorited already
+            favorites.push(catId);
+        }
+
+        //saves the updated favorites to the browser
+        localStorage.setItem("favoriteCats", JSON.stringify(favorites));
+
+        //updates the favorite button's state
+        const isFavorite = favorites.includes(catId);
+        favoriteButton.setAttribute("aria-pressed", isFavorite);
+    });
+}
+
+//view cat profile
+if(catGrid){
+    catGrid.addEventListener("click", function(event){
+        const profileBttn = event.target.closest(".learn-more");
+
+        if(!profileBttn) return;
+
+        const thisCat = profileBttn.dataset.catId;
+        const selectedCat = cats.find(function(cat){
+            return cat.id === thisCat;
         });
-       }
-       else{
 
-        //adds the cat if not favorited already
-        favorites.push(catId);
-       }
+        if(selectedCat){
+            const catInfo = document.querySelector("#cat-expanded");
 
-       //saves the updated favorites to the browser
-       localStorage.setItem("favoriteCats", JSON.stringify(favorites));
+            document.querySelector("#expanded-cat-name").textContent = selectedCat.name;
 
-       console.log("Current favorites:", favorites);
+            document.querySelector("#expanded-cat-age").textContent =  `Age: ${selectedCat.age} years`;
+
+            document.querySelector("#expanded-cat-img").innerHTML = `<img src="${selectedCat.image}" alt="Photo of ${selectedCat.name}">`;
+
+            catInfo.showModal();
+        }
     });
 }
