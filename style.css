@@ -622,8 +622,22 @@ header nav{
     justify-content: center;
 }
 
-/*Card Cards Section*/
+/**Card Cards Section**/
 .cats-directory{
     background-color: var(--warm-ivory);
     padding: 3rem;
+}
+.cats-directory h2{
+    margin-bottom: 2rem;
+}
+
+/**Cat Card grid**/
+.cat-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 2rem;
+    justify-content: center;
+}
+.cats-directory .cat-card{
+    background-color: var(--muted-sage);
 }
