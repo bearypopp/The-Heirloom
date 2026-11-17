@@ -41,6 +41,12 @@ const cats= [
 }
 ];
 
+/*=====Favorites Button======*/
+
+//retrieve saved fovorites or start with an empty array
+let favorites = JSON.parse(localStorage.getItem("favoriteCats")) || [];
+
+
 //Cat Card Generation
 const catGrid = document.querySelector(".cat-grid");
 if (catGrid) {
@@ -49,7 +55,7 @@ if (catGrid) {
 
 
         catGrid.innerHTML += `
-    <article class="cat-card">
+    <article class="cat-card" data-cat-id="${cat.id}">
         <div class="cat-img">
             <img src="${cat.image}" alt="Photo of ${cat.name}">
 
@@ -67,5 +73,34 @@ if (catGrid) {
         </div>
     </article>
     `;
+    });
+}
+
+//favorite button clicked
+if(catGrid){
+    catGrid.addEventListener("click", function(event){
+        const favoriteButton= event.target.closest(".fav-bttn");
+        if(!favoriteButton) return;
+
+        const catCard = favoriteButton.closest(".cat-card");
+        const catId = catCard.dataset.catId;
+
+       if(favorites.includes(catId)){
+
+        //removes the cat if already bookmarked
+        favorites = favorites.filter(function(id){
+            return id !== catId;
+        });
+       }
+       else{
+
+        //adds the cat if not favorited already
+        favorites.push(catId);
+       }
+
+       //saves the updated favorites to the browser
+       localStorage.setItem("favoriteCats", JSON.stringify(favorites));
+
+       console.log("Current favorites:", favorites);
     });
 }

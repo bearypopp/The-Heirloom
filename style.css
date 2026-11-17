@@ -630,6 +630,10 @@ header nav{
 .cats-directory h2{
     margin-bottom: 2rem;
 }
+.cats-directory .cat-card{
+    display: flex;
+    flex-direction: column;
+}
 
 /**Cat Card grid**/
 .cat-grid{
@@ -654,12 +658,25 @@ header nav{
     font-size: 1.125rem;
     line-height: 1.5;
 }
-
+.cats-directory .cat-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.cats-directory .cat-card[data-cat-id="miko"] .cat-img > img{
+    object-position: center 25%;
+}
+.cats-directory .cat-card[data-cat-id="mr.midnight"] .cat-img > img{
+    object-position: center 20%;
+}
+.cats-directory .cat-card[data-cat-id="cheddar"] .cat-img > img{
+    object-position: center 15%;
+}
 /**Cat Card Button**/
 .cats-directory .learn-more{
     display: block;
     width: 100%;
-    margin-top: 1.25rem;
+    margin-top: auto;
     padding: 0.85rem 1rem;
     background-color: var(--soft-blush);
     color: var(--vintage-plum);
