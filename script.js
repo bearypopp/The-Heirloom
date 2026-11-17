@@ -76,7 +76,7 @@ const cats = [
         image: "images/Cheddar.png",
         images: [
             "images/Cheddar.png",
-            "images/cheddar2"
+            "images/cheddar2.jpg"
         ],
         description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window.",
         nickname: "The Lovable Oddball",
@@ -209,8 +209,26 @@ if(catGrid){
     });
 }
 
-//selecting the next cat photo
+//selecting the previous cat photo
+const prevPhoto = document.querySelector(".img-prev");
 
+if(prevPhoto){
+    prevPhoto.addEventListener("click", function(){
+        currentPhoto = (currentPhoto - 1 + activeCat.images.length) % activeCat.images.length;
+
+        document.querySelector("#expanded-cat-img img").src= activeCat.images[currentPhoto];
+    });
+}
+//selecting the next cat photo
+const nextPhoto = document.querySelector(".img-next");
+
+if(nextPhoto){
+    nextPhoto.addEventListener("click", function(){
+        currentPhoto = (currentPhoto + 1) % activeCat.images.length;
+
+        document.querySelector("#expanded-cat-img img").src= activeCat.images[currentPhoto];
+    });
+}
 //when favorites is clicked in the expanded profile
  const profileFav = document.querySelector("#expanded-favorite");
 

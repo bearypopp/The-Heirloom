@@ -56,6 +56,7 @@ table {
     --dusty-rose: #A56A6A;
     --vintage-plum: #6B4C63;
     --charcoal-brown: #4A403D;
+    --pastel-matcha: #DCE8C5;
 
     /**Dark Mode Colors**/
     --deep-plum: #302A30;
@@ -754,12 +755,36 @@ header nav{
     max-width: 900px;
     max-height: 85vh;
     overflow-y: auto;
+    position: relative;
     margin: auto;
     padding: 2rem;
     border: none;
     border-radius: 12px;
-    background-color: var(--warm-ivory);
+    background-color: var(--soft-blush);
     box-shadow: var(--box-shadow);
+}
+/**Photos + buttons within expanded card**/
+.expanded-img{
+    position: relative;
+}
+.img-prev,
+.img-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50);
+    z-index: 1;
+}
+/**Previous Arrow**/
+.img-prev{
+    left: -0.75rem;
+}
+/**Next Arrow**/
+.img-next{
+    right: -0.75rem
+}
+.img-prev:hover,
+.img-next:hover{
+    transform: translateY(-50%) scale(1.08);
 }
 .expanded-fav-btn{
     width: 40px; 
@@ -778,4 +803,55 @@ header nav{
 }
 .expanded-fav-btn[aria-pressed="true"] img{
     filter: none;
+}
+
+/**Closing the expanded card**/
+.expanded-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+.expanded-close,
+.img-prev,
+.img-next{
+    width: 36px;
+    height: 36px;
+    background-color: var(--pastel-matcha);
+    color: var(--charcoal-brown);
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.expanded-close:hover,
+.img-prev:hover,
+.img-next:hover{
+    background-color: var(--muted-sage);
+    transform: scale(1.08);
+}
+
+/**Interested in Adopting Section**/
+.adopt-preview{
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 4rem;
+    background-color: var(--soft-blush);
+}
+.adopt-img img{
+    display: block;
+    width: 110px;
+    height: 119px;
+    object-fit: contain;
+}
+.adopt-info h2{
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    color: var(--charcoal-brown);
+    margin-bottom: 0.75rem;
 }
