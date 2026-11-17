@@ -624,7 +624,7 @@ header nav{
 
 /**Card Cards Section**/
 .cats-directory{
-    background-color: var(--warm-ivory);
+    background-color: var(--warm-ivory-);
     padding: 3rem;
 }
 .cats-directory h2{
@@ -640,4 +640,38 @@ header nav{
 }
 .cats-directory .cat-card{
     background-color: var(--muted-sage);
+}
+
+/**Cat Card**/
+.cats-directory .cat-info h3{
+    font-family: var(--font-header);
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.cats-directory .cat-info p{
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+/**Cat Card Button**/
+.cats-directory .learn-more{
+    display: block;
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    background-color: var(--soft-blush);
+    color: var(--vintage-plum);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cats-directory .learn-more:hover{
+    background-color: var(--vintage-plum);
+    color: var(--warm-ivory);
 }
