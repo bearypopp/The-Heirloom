@@ -1,6 +1,7 @@
 // Adding "use strict" to JS
 "use strict";
 
+//===============MTC Page Cat Cards==================//
 //cat data
 const cats= [
 {
@@ -8,7 +9,35 @@ const cats= [
     name:"Simon",
     age: 12,
     image: "images/simon.png",
-    description: "A gentle companion that loves afternoon naps under the sun"
+    description: "A gentle companion that loves afternoon naps under the sun."
+},
+{
+    id: "mr.midnight",
+    name: "Mr.Midnight",
+    age: 14,
+    image: "images/Mr.Midnight.png",
+    description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps."
+},
+{
+    id: "miko",
+    name: "Miko",
+    age: 10,
+    image: "images/Miko.png",
+    description: "A curious cat who loves exploring cozy corners."
+},
+{
+    id: "poppy",
+    name: "Poppy",
+    age: 12,
+    image: "images/Poppy.png",
+    description: "A sweet and very affectionate gal who loves all the attention."
+},
+{
+    id: "cheddar",
+    name: "Cheddar",
+    age: 13,
+    image: "images/Cheddar.png",
+    description: "An eccentric cat who loves is mouse toys when he's not taking a cat nap in the window."
 }
 ];
 
