@@ -82,6 +82,11 @@ table {
 html {
     scroll-behavior: smooth;
 }
+header{
+    position: relative;
+    z-index: 10;
+    box-shadow: var(--box-shadow);
+}
 
 body {
     min-height: 100vh;
@@ -598,4 +603,27 @@ header nav{
 .back-to-top:focus-visible{
     outline: 2px solid var(--vintage-plum);
     outline-offset: 4px;
+}
+
+/*====================MTC Page (cats.html)========================*/
+
+/*MTC Hero Section*/
+#mtc-hero{
+    background-color: var(--soft-blush);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+}
+#mtc-hero .hero-bttns{
+    margin-top: 2rem;
+}
+#mtc-hero .hero-text{
+    padding-top: 0;
+    justify-content: center;
+}
+
+/*Card Cards Section*/
+.cats-directory{
+    background-color: var(--warm-ivory);
+    padding: 3rem;
 }
