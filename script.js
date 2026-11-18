@@ -131,7 +131,10 @@ const catTrack = document.querySelector(".cat-track");
 if (catTrack) {
     function renderCats() {
         catTrack.innerHTML = "";
-        cats.slice(currentIndex, currentIndex + catsVisible).forEach(function (cat) {
+        //created an array to contain 3 cats. It iterates i, and wraps instead of stopping at the end of the array
+        Array.from({ length: catsVisible }, function (_, i){
+            return cats[(currentIndex + i) % cats.length];
+        }).forEach(function (cat) {
             catTrack.innerHTML +=
                 `
             <article class="cat-card" data-cat-id="${cat.id}">
@@ -152,6 +155,22 @@ if (catTrack) {
         });
     }
     renderCats();
+
+    //next button on HP carousel
+    const nextBttn= document.querySelector(".carousel-next");
+    nextBttn.addEventListener("click", function(){
+        currentIndex = (currentIndex + 1) % cats.length;
+        renderCats();
+    });
+
+    //prev button on HP carousel
+    const prevBttn= document.querySelector(".carousel-prev");
+    prevBttn.addEventListener("click", function(){
+        currentIndex = (currentIndex - 1 + cats.length) % cats.length;
+        renderCats();
+    });
+
+    //favorite button for MTC preview on the homepage
 }
 
 //favorite button clicked

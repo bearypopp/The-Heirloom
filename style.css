@@ -330,15 +330,87 @@ header nav{
     width: 24px;
     height: 24px;
 }
+.carousel-prev,
+.carousel-next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: var(--pastel-matcha);
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.carousel-prev:hover,
+.carousel-next:hover{
+    background-color: var(--muted-sage);
+    transform: translateY(-4px) scale(1.08);
+}
 .cat-carousel{
     grid-column: 1/-1;
     grid-row: 2;
-    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
     min-width:0;
+}
+/**Cat Card Typography**/
+.cats-preview .cat-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem;
+}
+.cats-preview .cat-card{
+    display: flex;
+    flex-direction: column;
+}
+.cats-preview .cat-info h3{
+    font-family: var(--font-header);
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--charcoal-brown);
+    margin-bottom: 0.75rem;
+}
+.cats-preview .cat-info p{
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+.cats-preview .learn-more{
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    padding: 0.85rem 1rem;
+    text-align: center;
+    background-color: var(--vintage-plum);
+    color: var(--warm-ivory);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+/**Adjusts images in Homepage MTC preview cards**/
+.cats-preview .learn-more:hover{
+    background-color: var(--charcoal-brown);
+    color: var(--warm-ivory);
+    transform: translateY(-3px);
+}
+.cats-preview .cat-card[data-cat-id="miko"] .cat-img > img{
+    object-position: center 25%;
+}
+.cats-preview .cat-card[data-cat-id="mr.midnight"] .cat-img > img{
+    object-position: center 20%;
+}
+.cats-preview .cat-card[data-cat-id="cheddar"] .cat-img > img{
+    object-position: center 15%;
 }
 .cat-track{
     display: flex;
