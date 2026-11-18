@@ -339,3 +339,21 @@ if(nextPhoto){
         }
     });
  }
+
+ //CONTACT PAGE CONTACT FORM
+ const contactForm = document.querySelector("#contact-form");
+ if (contactForm){
+    contactForm.addEventListener("submit", function(event){
+        event.preventDefault();
+        //sends message if form was completed
+        if(contactForm.checkValidity()){
+            alert("Your form has been completed! Thank you for contacting The Heirloom. Someone will reach out to you shortly!");
+            //clears the form after completed successfully
+            contactForm.reset();
+        }
+        else{
+            //shows a message if something is missing or invalid
+            contactForm.reportValidity();
+        }
+    });
+ }
