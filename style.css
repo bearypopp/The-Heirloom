@@ -1035,3 +1035,26 @@ header nav{
     color: var(--charcoal-brown);
     margin-top: 1rem;
 }
+
+/**============CAT CARE INFO PAGE==============**/
+
+/**Cat Care Hero**/
+#info-hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 5rem;
+    background-color: var(--soft-blush);
+}
+#info-hero > img{
+    width: 100%;
+    max-width: 550px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    justify-self: end;
+}
+
+/**Why Senior Cats section**/
