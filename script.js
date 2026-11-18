@@ -122,6 +122,38 @@ if (catGrid) {
     });
 }
 
+/**=============HOME PAGE CAT PREVIEW==================**/
+
+/**Makes sure home page carousel has 3 cat cards visible at a time**/
+let currentIndex = 0;
+const catsVisible = 3;
+const catTrack = document.querySelector(".cat-track");
+if (catTrack) {
+    function renderCats() {
+        catTrack.innerHTML = "";
+        cats.slice(currentIndex, currentIndex + catsVisible).forEach(function (cat) {
+            catTrack.innerHTML +=
+                `
+            <article class="cat-card" data-cat-id="${cat.id}">
+                <div class="cat-img">
+                    <img src="${cat.image}" alt="Photo of ${cat.name}">
+                        <button type="button" class="fav-bttn" aria-label="Add ${cat.name} to favorites" aria-pressed="${favorites.includes(cat.id)}">
+                            <img src="images/favorite_icon.svg" alt="" class="favorite_icon">
+                        </button>
+                </div>
+                <div class="cat-info">
+                    <h3>${cat.name}</h3>
+                    <p>Age: ${cat.age} years</p>
+                    <p>${cat.description}</p>
+                    <a href="cats.html" class="learn-more">View Profile</a>
+                </div>
+            </article>
+        `;
+        });
+    }
+    renderCats();
+}
+
 //favorite button clicked
 if (catGrid) {
     catGrid.addEventListener("click", function(event) {
