@@ -148,7 +148,7 @@ if (catTrack) {
                     <h3>${cat.name}</h3>
                     <p>Age: ${cat.age} years</p>
                     <p>${cat.description}</p>
-                    <a href="cats.html" class="learn-more">View Profile</a>
+                    <a href="cats.html?cat=${cat.id}" class="learn-more">View Profile</a>
                 </div>
             </article>
         `;
@@ -171,6 +171,24 @@ if (catTrack) {
     });
 
     //favorite button for MTC preview on the homepage
+    catTrack.addEventListener("click", function(event){
+        const favBttn = event.target.closest(".fav-bttn");
+
+        if(!favBttn) return;
+
+        const catCard = favBttn.closest(".cat-card");
+        const catId = catCard.dataset.catId;
+
+        if(favorites.includes(catId)){
+            //removes a cat from favorites
+            favorites = favorites.filter(id => id !== catId);
+        }
+        else{
+            favorites.push(catId);
+        }
+        localStorage.setItem("favoriteCats", JSON.stringify(favorites));
+        renderCats();
+    });
 }
 
 //favorite button clicked
@@ -248,6 +266,19 @@ if(catGrid){
             catInfo.showModal();
         }
     });
+
+    //opens specific cat profiles on the MTC Page from the Home Page
+    //URLSearchParams is JS built API used to iterate, create, and read URLs w/o external libraries
+    const selectedCatId = new URLSearchParams(window.location.search).get("cat");
+
+    if(selectedCatId){
+        const matchingProfile = Array.from(catGrid.querySelectorAll(".learn-more"))
+        .find(button => button.dataset.catId === selectedCatId);
+
+        if(matchingProfile){
+            matchingProfile.click();
+        }
+    }
 }
 
 //closing the expanded cat profile
