@@ -615,7 +615,7 @@ header nav{
     outline-offset: 4px;
 }
 
-/*====================MTC Page (cats.html)========================*/
+/*=============MTC Page (cats.html)===============*/
 
 /*MTC Hero Section*/
 #mtc-hero{
@@ -884,8 +884,7 @@ header nav{
     background-color: var(--dusty-rose);
 }
 
-/**==========Café Menu Page ===========**/
-
+/**========== CAFE MENU PAGE ===========**/
 #cafe-hero{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -917,3 +916,122 @@ header nav{
     max-width: 50ch;
 }
 /**Menu Navigation**/
+.menu-nav{
+    background-color: var(--muted-sage);
+    padding: 1.25rem 2rem;
+}
+.menu-nav-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+.menu-nav-list a{
+    font-family: var(--font-accent);
+    font-size: 1.375rem;
+    color: var(--charcoal-brown);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+.menu-nav-list a:hover{
+    color: var(--vintage-plum);
+    transform: translateY(-3px);
+}
+
+/**Menu customizations/add-ons**/
+.menu-addon{
+    background-color: var(--soft-blush);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+.menu-addon h3{
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--vintage-plum);
+    margin-bottom: 0.5rem;
+}
+.menu-addon p{
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--charcoal-brown);
+}
+.menu-addon p:not(:last-child){
+    margin-bottom: 1.25rem;
+}
+
+/**Coffee section**/
+.menu-section{
+    padding: 3rem 5rem;
+    background-color: var(--warm-ivory);
+}
+.menu-section h2{
+    font-family: var(--font-header);
+    font-size: 2rem;
+    color: var(--vintage-plum);
+    margin-bottom: 2rem;
+}
+
+/**menu grid**/
+.menu-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+/**individual cards**/
+.menu-card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--soft-blush);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, var(--box-shadow) 0.2s ease;
+}
+.menu-card:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow);
+}
+.menu-img{
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: var(--soft-blush);
+}
+
+/**Menu Items**/
+.menu-info{
+    padding: 1.25rem;
+}
+.menu-info h3{
+    font-family: var(--font-accent);
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--vintage-plum);
+    margin-bottom: 0.75rem;
+}
+.menu-price{
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--charcoal-brown);
+    margin: 0.5rem 0;
+}
+.menu-size,
+.menu-temp{
+    font-size: 0.95rem;
+    color: var(--charcoal-brown);
+    line-height: 1.5;
+}
+.menu-description{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--charcoal-brown);
+    margin-top: 1rem;
+}
