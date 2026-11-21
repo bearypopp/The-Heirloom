@@ -1250,7 +1250,68 @@ header nav{
 }
 
 /**Visit Form**/
-
+.visit-section{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.9fr;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem;
+}
+.visit-info h2{
+    font-family: var(--font-accent);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.visit-info,
+#visit-form{
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+.visit-info{
+    background-color: var(--pastel-matcha);
+}
+.visit-info p{
+    font-size: 1.125rem;
+}
+#visit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.125 rem;
+    background-color: var(--soft-blush);
+}
+#visit-form input, 
+#visit-form select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    background-color: var(--warm-ivory);
+    border: 1px solid var(--muted-sage);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+#visit-form .visit-note{
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+.visit-note{
+    font-size: 1.125rem;
+}
+.visit-hours{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 3rem 2rem 3rem;
+    background-color: var(--warm-ivory);
+    border-left: 3px solid var(--muted-sage);
+    justify-content: center;
+    
+}
+.visit-hours h3{
+    font-family: var(--font-accent);
+    font-size: 2.5rem;
+}
 /**Contact Form**/
 .contact-section{
     display: grid;
@@ -1341,7 +1402,8 @@ header nav{
 }
 
 /**Submit button**/
-#contact-form .form-submit{
+#contact-form .form-submit,
+#visit-form .form-submit{
     background-color: var(--vintage-plum);
     color: var(--warm-ivory);
     font-family: var(--font-body);
@@ -1353,7 +1415,8 @@ header nav{
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;;
 }
-#contact-form .form-submit:hover{
+#contact-form .form-submit:hover,
+#visit-form .form-submit:hover{
     background-color: var(--charcoal-brown);
     transform: translateY(-3px);
 }

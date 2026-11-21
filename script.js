@@ -65,7 +65,7 @@ const cats = [
         description: "A sweet and very affectionate gal who loves all the attention.",
         nickname:  "The Affectionate Daydreamer",
         personality: "A tenderhearted sweetheart with a playful streak. Poppy loves being adored, but she's equally content simply sharing a peaceful moment with someone she trusts.",
-        ikes: "Soft voices, gentle chin scratches, and cozy places to curl up.",
+        likes: "Soft voices, gentle chin scratches, and cozy places to curl up.",
         quirks: "Sticks her tongue out when she's especially relaxed, as if she's forgotten to put it away.",
         favorites: "Plush pillows and soft stuffed mice."
     },
@@ -339,8 +339,11 @@ if(nextPhoto){
         }
     });
  }
+/**=========VISIT US + CONTACT FORM========**/
 
- //CONTACT PAGE CONTACT FORM
+//Visit Us Form
+
+ //Contact Form
  const contactForm = document.querySelector("#contact-form");
  if (contactForm){
     contactForm.addEventListener("submit", function(event){
