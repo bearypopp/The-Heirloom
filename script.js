@@ -343,20 +343,34 @@ if(nextPhoto){
 
 //Visit Us Form
 
- //Contact Form
- const contactForm = document.querySelector("#contact-form");
- if (contactForm){
-    contactForm.addEventListener("submit", function(event){
+//select the reservation date field
+const visitDay = document.querySelector("#visit-date");
+if(visitDay){
+    //gets today's date using the visitor's local time
+    //refer to pg. 137 in JavaScript & Jquery by Duckett
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    //sets the earliest selectable date to today
+    visitDay.min = `${year}-${month}-${day}`;
+}
+
+//Contact Form
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
         //sends message if form was completed
-        if(contactForm.checkValidity()){
+        if (contactForm.checkValidity()) {
             alert("Your form has been completed! Thank you for contacting The Heirloom. Someone will reach out to you shortly!");
             //clears the form after completed successfully
             contactForm.reset();
         }
-        else{
+        else {
             //shows a message if something is missing or invalid
             contactForm.reportValidity();
         }
     });
- }
+}
