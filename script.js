@@ -355,8 +355,90 @@ if(visitDay){
 
     //sets the earliest selectable date to today
     visitDay.min = `${year}-${month}-${day}`;
+
+    //Selecting the Time in the dropdown
+    const visitTime = document.querySelector("#visit-time");
+
+    //updates the time when user changes the date
+    visitDay.addEventListener("change", function(){
+        visitTime.innerHTML = '<option value="">Select a Time</option>';
+        if(!visitDay.value) return;
+
+        //gets the selected day of the week
+        const daySelected = new Date(visitDay.value + "T12:00:00").getDay();
+
+        //weekdays open at 11am and weekends open at 10am
+        //here 0 through 6 represent the days of the week
+        let openingHr;
+        if(daySelected === 0 || daySelected === 6){
+            openingHr = 10;
+        }
+        else{
+            openingHr = 11;
+        }
+
+        //generates 30 min time slots until 5:00
+        //17 is 5pm
+        for(let hour = openingHr; hour <= 17; hour++){
+            for(let minute = 0; minute <60; minute +=30){
+                if(hour === 17 && minute === 30) break;
+
+                //Skipping past time slots when the selected date is "today"
+                const currentDay = new Date();
+                const selectedDay = visitDay.value;
+                const todaysDate =`${currentDay.getFullYear()}-${String(currentDay.getMonth()+ 1).padStart(2, "0")}-${String(currentDay.getDate()).padStart(2, "0")}`;
+
+                if(selectedDay === todaysDate){
+                    const selectedMinutes = hour * 60 + minute;
+                    const currentMinutes = currentDay.getHours() * 60 + currentDay.getMinutes();
+
+                    if(selectedMinutes <= currentMinutes){
+                        continue;
+                    }
+                }
+
+
+
+                //padStart will turn our minute value 0 to 00 so the time can be formatted as HH:MM
+                const time =`${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+
+                // 2000 is a placeholder date
+                //toLocaleTimeString converts the time into a 12hr format
+                const displayTime = new Date(`2000-01-01T${time}:00`).toLocaleTimeString("en-US", {
+                    //"2-digit" will display 00 or 30
+                   hour: "numeric",
+                   minute: "2-digit"
+                });
+                //this will create a new selectable time
+                const option = document.createElement("option");
+                option.value = time;
+                option.textContent = displayTime;
+                visitTime.appendChild(option);
+            }
+        }
+
+        //shows a message if no reservation times are available
+        if(visitTime.options.length === 1){
+            visitTime.options[0].textContent = "No available times remaining today";       
+         }
+    });
+    //Checking if the form is complete; gives users a warning if form field is missing; shows confirmation if form is valid; clears form afterwards
+    const rsvpForm = document.querySelector("#visit-form");
+    rsvpForm.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        if(rsvpForm.checkValidity()){
+            alert("Your visit request has been completed! Thank you for planning a visit to The Heirloom.");
+            rsvpForm.reset();
+        }
+        else{
+            rsvpForm.reportValidity();
+        }
+    });
+
 }
 
+//
 //Contact Form
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {

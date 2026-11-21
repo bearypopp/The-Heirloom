@@ -73,15 +73,17 @@
                 <p class="visit-note">Planning a visit with more than 5 guests? Please call prior to filling out a form
                     so we can help accomodate your group comfortably.</p>
                 <div class="form-field">
-                    <label for="visit-date">Preferred Date</label>
+                    <label for="visit-date">Preferred Date<span>*</span></label>
                     <input type="date" id="visit-date" name="visitDate" required>
                 </div>
                 <div class="form-field">
-                    <label for="visit-time">Preferred Time</label>
-                    <input type="time" id="visit-time" name="visitTime" required>
+                    <label for="visit-time">Preferred Time<span>*</span></label>
+                    <select id="visit-time" name="visitTime" required>
+                        <option value="">Select a Time</option>
+                    </select>
                 </div>
                 <div class="form-field">
-                    <label for="party-size">Party Size</label>
+                    <label for="party-size">Party Size<span>*</span></label>
                     <select id="party-size" name="partySize" required>
                         <option value="">Select Party Size</option>
                         <option value="1">1 Guest</option>
