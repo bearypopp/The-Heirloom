@@ -53,7 +53,7 @@
         <!--Adoption Section-->
         <section class="hero" id="adopt-hero">
             <!--Change image to something else-->
-            <img src="images/adoption_icon.svg" alt="hero image">
+            <img src="images/cat_with_human.jpg" alt="">
             <div class="hero-text">
                 <h2>Interested in Adopting?</h2>
                 <p>Every cat at The Heirloom is waiting for a special place to call home. Our adoption process is
@@ -74,20 +74,22 @@
                                 <label for="adopt-first-name">First Name<span>*</span></label>
                                 <input type="text" id="adopt-first-name" name="firstName" required>
                             </div>
-
+                            
                             <div class="form-field">
                                 <label for="adopt-last-name">Last Name<span>*</span></label>
                                 <input type="text" id="adopt-last-name" name="lastName" required>
                             </div>
-                        </div>
-                        <div class="form-field">
-                            <label for="adopt-email">Email Address<span>*</span></label>
-                            <input type="email" id="adopt-email" name="email" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="adopt-phone">Phone Number<span>*</span></label>
-                            <input type="tel" id="adopt-phone" name="phone" autocomplete="tel" required>
-                        </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="adopt-email">Email Address<span>*</span></label>
+                                    <input type="email" id="adopt-email" name="email" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="adopt-phone">Phone Number<span>*</span></label>
+                                    <input type="tel" id="adopt-phone" name="phone" autocomplete="tel" required>
+                                </div>
+                            </div>
 
                         <!--Preferred Method of Contact-->
                         <fieldset class="form-field">
@@ -123,7 +125,7 @@
                                     placeholder="apt, suite, unit #, etc." autocomplete="address-line2">
                             </div>
 
-                            <div class="form-row">
+                            <div class="form-row-address">
                                 <div class="form-field">
                                     <label for="adopt-city">City<span>*</span></label>
                                     <input type="text" id="adopt-city" name="city" required>
@@ -192,60 +194,60 @@
                                         maxlength="5" title="Please enter a 5-digit ZIP code" required>
                                 </div>
                             </div>
-
-                            <!--Information on Potential Adopter's living-->
-                            <div class="form-row">
-
-                                <!--Living situation-->
-                                <div class="form-field">
-                                    <label for="livingSituation">Living Situation<span>*</span></label>
-                                    <select id="livingSituation" name="livingSituation" required>
-                                        <option value="">Select one</option>
-                                        <option value="house">House</option>
-                                        <option value="apartment">Apartment</option>
-                                        <option value="other">Other</option>
-                                    </select>
-
-                                    <!--Shown when Other is selected-->
-                                    <div class="conditional-field" id="living-other-field" hidden>
-                                        <label for="livingOther">Please Specify</label>
-
-                                        <input type="text" id="livingOther" name="livingOther"
-                                            placeholder="Describe your living situation" disabled>
-                                    </div>
-                                </div>
-
-                                <!--Other Pets-->
-                                <div class="form-field">
-                                    <label for="otherPets">Do You Have Other Pets?</label>
-
-                                    <select id="otherPets" name="otherPets" required>
-                                        <option value="">Select one</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-
-                                    <!--Shown when yes is selected-->
-                                    <div class="conditional-field" id="pet-count-field" hidden>
-                                        <label for="petCount">How Many Pets?</label>
-
-                                        <input type="number" id="petCount" name="petCount" min="1" step="1"
-                                            placeholder="Number of pets" disabled>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--About potential adopter-->
-                            <div class="form-field">
-                                <label for="aboutAdopter">Tell Us About Yourself and Your Home <span>*</span></label>
-                                <textarea id="aboutAdopter" name="aboutAdopter" rows="5"
-                                    placeholder="Tell us about your household, lifestyle, and the home you hope to provide."
-                                    required></textarea>
-                            </div>
-
-                            <!--Adoption Form Submission-->
-                            <button type="submit" class="form-submit">Submit Adoption Interest Form</button>
                         </fieldset>
+                        <!--Information on Potential Adopter's living-->
+                        <div class="form-row">
+
+                            <!--Living situation-->
+                            <div class="form-field">
+                                <label for="livingSituation">Living Situation<span>*</span></label>
+                                <select id="livingSituation" name="livingSituation" required>
+                                    <option value="">Select one</option>
+                                    <option value="house">House</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                                <!--Shown when Other is selected-->
+                                <div class="conditional-field" id="living-other-field" hidden>
+                                    <label for="livingOther">Please Specify</label>
+
+                                    <input type="text" id="livingOther" name="livingOther"
+                                        placeholder="Describe your living situation" disabled>
+                                </div>
+                            </div>
+
+                            <!--Other Pets-->
+                            <div class="form-field">
+                                <label for="otherPets">Do You Have Other Pets?</label>
+
+                                <select id="otherPets" name="otherPets" required>
+                                    <option value="">Select one</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+
+                                <!--Shown when yes is selected-->
+                                <div class="conditional-field" id="pet-count-field" hidden>
+                                    <label for="petCount">How Many Pets?</label>
+
+                                    <input type="number" id="petCount" name="petCount" min="1" step="1"
+                                        placeholder="Number of pets" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--About potential adopter-->
+                        <div class="form-field">
+                            <label for="aboutAdopter">Tell Us About Yourself and Your Home <span>*</span></label>
+                            <textarea id="aboutAdopter" name="aboutAdopter" rows="5"
+                                placeholder="Tell us about your household, lifestyle, and the home you hope to provide."
+                                required></textarea>
+                        </div>
+
+                        <!--Adoption Form Submission-->
+                        <button type="submit" class="form-submit">Submit Adoption Interest Form</button>
+
                     </form>
                 </div>
 

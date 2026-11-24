@@ -250,6 +250,7 @@ header nav{
     width: 100%;
     height: auto;
     display: block; 
+    border-radius: 12px;
 }
 .hero-text h2{
     font-family: var(--font-accent);
@@ -1237,6 +1238,93 @@ header nav{
     margin-bottom: 1.5rem;
 }
 /**===============ADOPTION PAGE========================**/
+
+/**Hero Section**/
+#adopt-hero{
+    background-color: var(--soft-blush);
+}
+#adopt-hero > img{
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    justify-self: center;
+    
+}
+
+/**Adoption Form**/
+.adoption-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem;
+}
+.adoption-form-section{
+    background-color: var(--soft-blush);
+    padding: 3rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+.adoption-info{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+}
+.adoption-info-block{
+    background-color: var(--pastel-matcha);
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+.adoption-info-block h3{
+    font-family: var(--font-accent);
+    font-size: 1.75rem;
+    color: var(--charcoal-brown);
+    margin-bottom: 1.25rem;
+}
+.adoption-info-block p{
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--charcoal-brown);
+}
+#adoption-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+#adoption-form .form-row{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+#adoption-form .form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+#adoption-form input:not([type="radio"]),
+#adoption-form select,
+#adoption-form textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    background-color: var(--warm-ivory);
+    border: 1px solid var(--muted-sage);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+#adoption-form .form-row-address{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
 
 /**===============VISIT + CONTACT PAGE========================**/
 
