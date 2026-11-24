@@ -384,8 +384,26 @@ if(otherPets){
     });
 }
 
+//Adoption form validation
+//users will be prompted with warnings if the form isn't complete or will be prompted with an event listener if the user successfully fills out the form
+const adoptionForm =document.querySelector("#adoption-form");
 
+if(adoptionForm){
+    adoptionForm.addEventListener("submit", function(event){
+        event.preventDefault();
 
+        //users will be prompted a message if the form is fully completed
+        if(adoptionForm.checkValidity()){
+            alert("Your adoption interest form has been completed! Thank you for your interest in The Heirloom.");
+            
+            //resets form after submitting
+            adoptionForm.reset();
+        }
+        else{
+            adoptionForm.reportValidity();
+        }
+    });
+}
 
 
 /**=========VISIT US + CONTACT FORM========**/
@@ -473,7 +491,7 @@ if (visitDay) {
     });
     //Checking if the form is complete; gives users a warning if form field is missing; shows confirmation if form is valid; clears form afterwards
     const rsvpForm = document.querySelector("#visit-form");
-    rsvpForm.addEventListener("submit", function (event) {
+    rsvpForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
         if (rsvpForm.checkValidity()) {
