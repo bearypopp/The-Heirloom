@@ -31,11 +31,11 @@ const cats = [
         ],
         description: "A quiet gentleman who enjoys peaceful evenings and cuddling in laps.",
         nickname: "The Distinguished Gentleman",
-        personality:"A dignified gentleman with a surprisingly soft side. Mr. Midnight prefers quiet company, meaningful eye contact, and affection on his own terms.",
+        personality: "A dignified gentleman with a surprisingly soft side. Mr. Midnight prefers quiet company, meaningful eye contact, and affection on his own terms.",
         likes: "Peaceful evenings, gentle brushing, and a comfortable lap.",
         quirks: "Stares at you like he's judging your life choices, then rewards you with the sweetest little head bump.",
         favorites: "Velvet cushions and feather wands."
-        
+
     },
     {
         id: "miko",
@@ -63,7 +63,7 @@ const cats = [
             "images/poppy2.jpg"
         ],
         description: "A sweet and very affectionate gal who loves all the attention.",
-        nickname:  "The Affectionate Daydreamer",
+        nickname: "The Affectionate Daydreamer",
         personality: "A tenderhearted sweetheart with a playful streak. Poppy loves being adored, but she's equally content simply sharing a peaceful moment with someone she trusts.",
         likes: "Soft voices, gentle chin scratches, and cozy places to curl up.",
         quirks: "Sticks her tongue out when she's especially relaxed, as if she's forgotten to put it away.",
@@ -132,7 +132,7 @@ if (catTrack) {
     function renderCats() {
         catTrack.innerHTML = "";
         //created an array to contain 3 cats. It iterates i, and wraps instead of stopping at the end of the array
-        Array.from({ length: catsVisible }, function (_, i){
+        Array.from({ length: catsVisible }, function (_, i) {
             return cats[(currentIndex + i) % cats.length];
         }).forEach(function (cat) {
             catTrack.innerHTML +=
@@ -157,33 +157,33 @@ if (catTrack) {
     renderCats();
 
     //next button on HP carousel
-    const nextBttn= document.querySelector(".carousel-next");
-    nextBttn.addEventListener("click", function(){
+    const nextBttn = document.querySelector(".carousel-next");
+    nextBttn.addEventListener("click", function () {
         currentIndex = (currentIndex + 1) % cats.length;
         renderCats();
     });
 
     //prev button on HP carousel
-    const prevBttn= document.querySelector(".carousel-prev");
-    prevBttn.addEventListener("click", function(){
+    const prevBttn = document.querySelector(".carousel-prev");
+    prevBttn.addEventListener("click", function () {
         currentIndex = (currentIndex - 1 + cats.length) % cats.length;
         renderCats();
     });
 
     //favorite button for MTC preview on the homepage
-    catTrack.addEventListener("click", function(event){
+    catTrack.addEventListener("click", function (event) {
         const favBttn = event.target.closest(".fav-bttn");
 
-        if(!favBttn) return;
+        if (!favBttn) return;
 
         const catCard = favBttn.closest(".cat-card");
         const catId = catCard.dataset.catId;
 
-        if(favorites.includes(catId)){
+        if (favorites.includes(catId)) {
             //removes a cat from favorites
             favorites = favorites.filter(id => id !== catId);
         }
-        else{
+        else {
             favorites.push(catId);
         }
         localStorage.setItem("favoriteCats", JSON.stringify(favorites));
@@ -193,7 +193,7 @@ if (catTrack) {
 
 //favorite button clicked
 if (catGrid) {
-    catGrid.addEventListener("click", function(event) {
+    catGrid.addEventListener("click", function (event) {
         const favoriteButton = event.target.closest(".fav-bttn");
         if (!favoriteButton) return;
 
@@ -225,26 +225,26 @@ if (catGrid) {
 //view cat profile
 let currentPhoto = 0;
 let activeCat = null;
-if(catGrid){
-    catGrid.addEventListener("click", function(event){
+if (catGrid) {
+    catGrid.addEventListener("click", function (event) {
         const profileBttn = event.target.closest(".learn-more");
 
-        if(!profileBttn) return;
+        if (!profileBttn) return;
 
         const thisCat = profileBttn.dataset.catId;
-        const selectedCat = cats.find(function(cat){
+        const selectedCat = cats.find(function (cat) {
             return cat.id === thisCat;
         });
 
         //if the card is expanded, it will show the cat's info
-        if(selectedCat){
+        if (selectedCat) {
             activeCat = selectedCat;
             currentPhoto = 0;
             const catInfo = document.querySelector("#cat-expanded");
 
             document.querySelector("#expanded-cat-name").textContent = selectedCat.name;
             document.querySelector("#expanded-cat-nickname").textContent = selectedCat.nickname;
-            document.querySelector("#expanded-cat-age").innerHTML =  `<strong>Age:</strong> ${selectedCat.age} years`;
+            document.querySelector("#expanded-cat-age").innerHTML = `<strong>Age:</strong> ${selectedCat.age} years`;
             document.querySelector("#expanded-cat-img").innerHTML = `<img src="${selectedCat.images[0]}" alt="Photo of ${selectedCat.name}">`;
 
             //headers for inside the expanded cat card (Age, etc.)
@@ -255,7 +255,7 @@ if(catGrid){
 
             //favorite button in expanded card  
             const profileFav = document.querySelector("#expanded-favorite");
-            
+
             profileFav.setAttribute(
                 "aria-pressed",
                 favorites.includes(selectedCat.id)
@@ -271,22 +271,22 @@ if(catGrid){
     //URLSearchParams is JS built API used to iterate, create, and read URLs w/o external libraries
     const selectedCatId = new URLSearchParams(window.location.search).get("cat");
 
-    if(selectedCatId){
+    if (selectedCatId) {
         const matchingProfile = Array.from(catGrid.querySelectorAll(".learn-more"))
-        .find(button => button.dataset.catId === selectedCatId);
+            .find(button => button.dataset.catId === selectedCatId);
 
-        if(matchingProfile){
+        if (matchingProfile) {
             matchingProfile.click();
         }
     }
 }
 
 //closing the expanded cat profile
- const catInfo = document.querySelector("#cat-expanded");
- const closeProfile = document.querySelector(".expanded-close");
+const catInfo = document.querySelector("#cat-expanded");
+const closeProfile = document.querySelector(".expanded-close");
 
- if(catInfo && closeProfile){
-    closeProfile.addEventListener("click", function(){
+if (catInfo && closeProfile) {
+    closeProfile.addEventListener("click", function () {
         catInfo.close();
     });
 }
@@ -294,58 +294,107 @@ if(catGrid){
 //selecting the previous cat photo
 const prevPhoto = document.querySelector(".img-prev");
 
-if(prevPhoto){
-    prevPhoto.addEventListener("click", function(){
+if (prevPhoto) {
+    prevPhoto.addEventListener("click", function () {
         currentPhoto = (currentPhoto - 1 + activeCat.images.length) % activeCat.images.length;
 
-        document.querySelector("#expanded-cat-img img").src= activeCat.images[currentPhoto];
+        document.querySelector("#expanded-cat-img img").src = activeCat.images[currentPhoto];
     });
 }
 //selecting the next cat photo
 const nextPhoto = document.querySelector(".img-next");
 
-if(nextPhoto){
-    nextPhoto.addEventListener("click", function(){
+if (nextPhoto) {
+    nextPhoto.addEventListener("click", function () {
         currentPhoto = (currentPhoto + 1) % activeCat.images.length;
 
-        document.querySelector("#expanded-cat-img img").src= activeCat.images[currentPhoto];
+        document.querySelector("#expanded-cat-img img").src = activeCat.images[currentPhoto];
     });
 }
-//when favorites is clicked in the expanded profile
- const profileFav = document.querySelector("#expanded-favorite");
+//when favorites is clicked in the expanded profile 
+const profileFav = document.querySelector("#expanded-favorite");
 
- if(profileFav){
-    profileFav.addEventListener("click", function(){
+if (profileFav) {
+    profileFav.addEventListener("click", function () {
         const thisCat = profileFav.dataset.catId;
 
-        if(favorites.includes(thisCat)){
-            favorites = favorites.filter(function(id){
+        if (favorites.includes(thisCat)) {
+            favorites = favorites.filter(function (id) {
                 return id !== thisCat;
             });
         }
-        else{
+        else {
             favorites.push(thisCat);
         }
         localStorage.setItem("favoriteCats", JSON.stringify(favorites));
-        profileFav.setAttribute("aria-pressed",favorites.includes(thisCat));
+        profileFav.setAttribute("aria-pressed", favorites.includes(thisCat));
 
         // Update the matching gallery heart
         const galleryFav = document.querySelector(
-           `.cat-card[data-cat-id="${thisCat}"] .fav-bttn` 
-        ); 
+            `.cat-card[data-cat-id="${thisCat}"] .fav-bttn`
+        );
 
-        if(galleryFav){
+        if (galleryFav) {
             galleryFav.setAttribute("aria-pressed", favorites.includes(thisCat));
         }
     });
- }
+}
+
+/**=========ADOPTION FORM========**/
+
+//For Living Situation if user pickers "other". If users pick "Other", then they can fill in another option.
+const livingSituation = document.querySelector("#livingSituation");
+const livingOtherField = document.querySelector("#living-other-field");
+const livingOther = document.querySelector("#livingOther");
+
+if(livingSituation){
+    livingSituation.addEventListener("change", function(){
+        if(livingSituation.value === "other"){
+            livingOtherField.hidden = false;
+            livingOther.disabled = false;
+            livingOther.required = true;
+        }
+        else{
+            livingOtherField.hidden =true;
+            livingOther.disabled = true;
+            livingOther.value = "";
+            livingOther.required = false;
+        }
+    });
+}
+
+//For "Other Pets" if users selects that. If they select "yes" then they can fill it in.
+const otherPets = document.querySelector("#otherPets");
+const petCountField = document.querySelector("#pet-count-field");
+const petCount = document.querySelector("#petCount");
+
+if(otherPets){
+    otherPets.addEventListener("change", function(){
+        if(otherPets.value === "yes"){
+            petCountField.hidden = false;
+            petCount.disabled = false;
+            petCount.required = true;
+        }
+        else{
+            petCountField.hidden = true;
+            petCount.disabled = true;
+            petCount.required = false;
+            petCount.value ="";
+        }
+    });
+}
+
+
+
+
+
 /**=========VISIT US + CONTACT FORM========**/
 
 //Visit Us Form
 
 //select the reservation date field
 const visitDay = document.querySelector("#visit-date");
-if(visitDay){
+if (visitDay) {
     //gets today's date using the visitor's local time
     //refer to pg. 137 in JavaScript & Jquery by Duckett
     const today = new Date();
@@ -360,9 +409,9 @@ if(visitDay){
     const visitTime = document.querySelector("#visit-time");
 
     //updates the time when user changes the date
-    visitDay.addEventListener("change", function(){
+    visitDay.addEventListener("change", function () {
         visitTime.innerHTML = '<option value="">Select a Time</option>';
-        if(!visitDay.value) return;
+        if (!visitDay.value) return;
 
         //gets the selected day of the week
         const daySelected = new Date(visitDay.value + "T12:00:00").getDay();
@@ -370,29 +419,29 @@ if(visitDay){
         //weekdays open at 11am and weekends open at 10am
         //here 0 through 6 represent the days of the week
         let openingHr;
-        if(daySelected === 0 || daySelected === 6){
+        if (daySelected === 0 || daySelected === 6) {
             openingHr = 10;
         }
-        else{
+        else {
             openingHr = 11;
         }
 
         //generates 30 min time slots until 5:00
         //17 is 5pm
-        for(let hour = openingHr; hour <= 17; hour++){
-            for(let minute = 0; minute <60; minute +=30){
-                if(hour === 17 && minute === 30) break;
+        for (let hour = openingHr; hour <= 17; hour++) {
+            for (let minute = 0; minute < 60; minute += 30) {
+                if (hour === 17 && minute === 30) break;
 
                 //Skipping past time slots when the selected date is "today"
                 const currentDay = new Date();
                 const selectedDay = visitDay.value;
-                const todaysDate =`${currentDay.getFullYear()}-${String(currentDay.getMonth()+ 1).padStart(2, "0")}-${String(currentDay.getDate()).padStart(2, "0")}`;
+                const todaysDate = `${currentDay.getFullYear()}-${String(currentDay.getMonth() + 1).padStart(2, "0")}-${String(currentDay.getDate()).padStart(2, "0")}`;
 
-                if(selectedDay === todaysDate){
+                if (selectedDay === todaysDate) {
                     const selectedMinutes = hour * 60 + minute;
                     const currentMinutes = currentDay.getHours() * 60 + currentDay.getMinutes();
 
-                    if(selectedMinutes <= currentMinutes){
+                    if (selectedMinutes <= currentMinutes) {
                         continue;
                     }
                 }
@@ -400,14 +449,14 @@ if(visitDay){
 
 
                 //padStart will turn our minute value 0 to 00 so the time can be formatted as HH:MM
-                const time =`${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+                const time = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 
                 // 2000 is a placeholder date
                 //toLocaleTimeString converts the time into a 12hr format
                 const displayTime = new Date(`2000-01-01T${time}:00`).toLocaleTimeString("en-US", {
                     //"2-digit" will display 00 or 30
-                   hour: "numeric",
-                   minute: "2-digit"
+                    hour: "numeric",
+                    minute: "2-digit"
                 });
                 //this will create a new selectable time
                 const option = document.createElement("option");
@@ -418,27 +467,25 @@ if(visitDay){
         }
 
         //shows a message if no reservation times are available
-        if(visitTime.options.length === 1){
-            visitTime.options[0].textContent = "No available times remaining today";       
-         }
+        if (visitTime.options.length === 1) {
+            visitTime.options[0].textContent = "No available times remaining today";
+        }
     });
     //Checking if the form is complete; gives users a warning if form field is missing; shows confirmation if form is valid; clears form afterwards
     const rsvpForm = document.querySelector("#visit-form");
-    rsvpForm.addEventListener("submit", function(event){
+    rsvpForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        if(rsvpForm.checkValidity()){
+        if (rsvpForm.checkValidity()) {
             alert("Your visit request has been completed! Thank you for planning a visit to The Heirloom.");
             rsvpForm.reset();
         }
-        else{
+        else {
             rsvpForm.reportValidity();
         }
     });
 
 }
-
-//
 //Contact Form
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
