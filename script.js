@@ -1,7 +1,22 @@
 // Adding "use strict" to JS
 "use strict";
 
-//===============MTC Page Cat Cards==================//
+/**=========DARK & LIGHT MODE===========**/
+const themeSwitch = document.querySelector("#theme-switch");
+
+if(themeSwitch){
+    themeSwitch.addEventListener("click", function(){
+        if(document.body.dataset.theme === "light"){
+            document.body.dataset.theme = "dark";
+        }
+        else{
+            document.body.dataset.theme = "light"
+        }
+    });
+}
+
+
+//**===============MTC Page Cat Cards==================**//
 //cat data
 const cats = [
     {

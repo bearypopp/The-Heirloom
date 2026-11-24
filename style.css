@@ -97,6 +97,17 @@ body {
     line-height: 1.5;
 }
 
+body[data-theme = "dark"]{
+    /**colors**/
+    --warm-ivory: #302831;
+    --soft-blush: #493745;
+    --muted-sage: #7F9280;
+    --dusty-rose: #B78B91;
+    --vintage-plum: #D2AFC7;
+    --charcoal-brown: #F0E6DE;
+    --pastel-matcha: #39483E;
+}
+
 h1, h2, h3{
     font-family: var(--font-header);
     font-weight: normal;
@@ -851,7 +862,7 @@ header nav{
 .img-next{
     position: absolute;
     top: 50%;
-    transform: translateY(-50);
+    transform: translateY(-50%);
     z-index: 1;
 }
 /**Previous Arrow**/
@@ -1142,14 +1153,14 @@ header nav{
 }
 .cat-care h2{
     font-family: var(--font-header);
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: var(--vintage-plum);
     margin-bottom: 1.5rem;
 }
 
 .cat-care p{
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.7;
     color: var(--charcoal-brown);
     max-width: 100ch;
@@ -1177,6 +1188,7 @@ header nav{
 .planning-list strong{
     font-weight: bold;
     color: var(--vintage-plum);
+    font-size: 1.25rem;
 }
 
 /**Creating a Comfy Home Section**/
@@ -1423,7 +1435,7 @@ header nav{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: 1.125 rem;
+    font-size: 1.125rem;
     background-color: var(--soft-blush);
 }
 #visit-form input, 
