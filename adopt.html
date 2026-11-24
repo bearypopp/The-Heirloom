@@ -71,29 +71,29 @@
                         <!--will first and last name side by side using CSS without affecting rest of form-->
                         <div class="form-row">
                             <div class="form-field">
-                                <label for="adopt-first-name">First Name<span>*</span></label>
+                                <label for="adopt-first-name">First Name:<span>*</span></label>
                                 <input type="text" id="adopt-first-name" name="firstName" required>
                             </div>
                             
                             <div class="form-field">
-                                <label for="adopt-last-name">Last Name<span>*</span></label>
+                                <label for="adopt-last-name">Last Name:<span>*</span></label>
                                 <input type="text" id="adopt-last-name" name="lastName" required>
                             </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <label for="adopt-email">Email Address<span>*</span></label>
+                                    <label for="adopt-email">Email Address:<span>*</span></label>
                                     <input type="email" id="adopt-email" name="email" required>
                                 </div>
                                 <div class="form-field">
-                                    <label for="adopt-phone">Phone Number<span>*</span></label>
+                                    <label for="adopt-phone">Phone Number:<span>*</span></label>
                                     <input type="tel" id="adopt-phone" name="phone" autocomplete="tel" required>
                                 </div>
                             </div>
 
                         <!--Preferred Method of Contact-->
                         <fieldset class="form-field">
-                            <legend>Preferred Contact Method<span>*</span></legend>
+                            <legend>Preferred Contact Method:<span>*</span></legend>
                             <label>
                                 <input type="radio" name="contactMethod" value="email" required>Email</label>
                             <label>
@@ -101,39 +101,39 @@
                         </fieldset>
 
                         <div class="form-field">
-                            <label for="cat-interest">Cat of Interest<span>*</span></label>
+                            <label for="cat-interest">Cat of Interest:<span>*</span></label>
                             <select id="cat-interest" name="catInterest" required>
                                 <option value="">Select a cat</option>
                                 <option value="simon">Simon</option>
-                                <option value="clementine">Clementine</option>
-                                <option value="mister-max">Mister Max</option>
-                                <option value="milo">Milo</option>
-                                <option value="junnie">Junnie</option>
+                                <option value="mr.midnight">Mr. Midnight</option>
+                                <option value="miko">Miko</option>
+                                <option value="poppy">Poppy</option>
+                                <option value="cheddar">Cheddar</option>
                             </select>
                         </div>
 
                         <!--Home Address-->
                         <fieldset class="address-field">
-                            <legend>Home Address<span>*</span></legend>
+                            <legend>Home Address <span>*</span></legend>
                             <div class="form-field">
-                                <label for="adopt-street">Street Address<span>*</span></label>
+                                <label for="adopt-street">Street Address 1:<span>*</span></label>
                                 <input type="text" id="adopt-street" name="street" required>
                             </div>
                             <div class="form-field">
-                                <label for="adopt-street-2">Street Address 2 (Optional)</label>
+                                <label for="adopt-street-2">Street Address 2: (Optional)</label>
                                 <input type="text" id="adopt-street-2" name="street2"
                                     placeholder="apt, suite, unit #, etc." autocomplete="address-line2">
                             </div>
 
                             <div class="form-row-address">
                                 <div class="form-field">
-                                    <label for="adopt-city">City<span>*</span></label>
+                                    <label for="adopt-city">City:<span>*</span></label>
                                     <input type="text" id="adopt-city" name="city" required>
                                 </div>
 
                                 <!--States is a dropdown menu with all 50 states as an option-->
                                 <div class="form-field">
-                                    <label for="adopt-state">State<span>*</span></label>
+                                    <label for="adopt-state">State:<span>*</span></label>
                                     <select id="adopt-state" name="state" required>
                                         <option value="">Select a State</option>
                                         <option value="AL">Alabama</option>
@@ -189,7 +189,7 @@
                                     </select>
                                 </div>
                                 <div class="form-field">
-                                    <label for="adopt-zip">ZIP Code<span>*</span></label>
+                                    <label for="adopt-zip">ZIP Code:<span>*</span></label>
                                     <input type="text" id="adopt-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}"
                                         maxlength="5" title="Please enter a 5-digit ZIP code" required>
                                 </div>
@@ -200,7 +200,7 @@
 
                             <!--Living situation-->
                             <div class="form-field">
-                                <label for="livingSituation">Living Situation<span>*</span></label>
+                                <label for="livingSituation">Living Situation:<span>*</span></label>
                                 <select id="livingSituation" name="livingSituation" required>
                                     <option value="">Select one</option>
                                     <option value="house">House</option>
@@ -210,7 +210,7 @@
 
                                 <!--Shown when Other is selected-->
                                 <div class="conditional-field" id="living-other-field" hidden>
-                                    <label for="livingOther">Please Specify</label>
+                                    <label for="livingOther">Please Specify:</label>
 
                                     <input type="text" id="livingOther" name="livingOther"
                                         placeholder="Describe your living situation" disabled>
@@ -219,7 +219,7 @@
 
                             <!--Other Pets-->
                             <div class="form-field">
-                                <label for="otherPets">Do You Have Other Pets?</label>
+                                <label for="otherPets">Do You Have Other Pets?:</label>
 
                                 <select id="otherPets" name="otherPets" required>
                                     <option value="">Select one</option>
@@ -229,7 +229,7 @@
 
                                 <!--Shown when yes is selected-->
                                 <div class="conditional-field" id="pet-count-field" hidden>
-                                    <label for="petCount">How Many Pets?</label>
+                                    <label for="petCount">How Many Pets?:</label>
 
                                     <input type="number" id="petCount" name="petCount" min="1" step="1"
                                         placeholder="Number of pets" disabled>
@@ -239,7 +239,7 @@
 
                         <!--About potential adopter-->
                         <div class="form-field">
-                            <label for="aboutAdopter">Tell Us About Yourself and Your Home <span>*</span></label>
+                            <label for="aboutAdopter">Tell Us About Yourself and Your Home: <span>*</span></label>
                             <textarea id="aboutAdopter" name="aboutAdopter" rows="5"
                                 placeholder="Tell us about your household, lifestyle, and the home you hope to provide."
                                 required></textarea>

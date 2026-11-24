@@ -1306,10 +1306,29 @@ header nav{
     flex-direction: column;
     gap: 0.5rem
 }
-
+#adoption-form fieldset.form-field{
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 0.75rem;
+    border: none;
+}
+#adoption-form fieldset.form-field legend{
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+#adoption-form fieldset.form-field label{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
 #adoption-form input:not([type="radio"]),
 #adoption-form select,
-#adoption-form textarea{
+#adoption-form textarea,
+#adoption-form .form-submit{
     width: 100%;
     box-sizing: border-box;
     padding: 0.75rem;
@@ -1323,9 +1342,48 @@ header nav{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
+    padding: 1rem 0;
 }
-
-
+#adoption-form .address-field{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: none;
+    min-width: 0;
+}
+#adoption-form .address-field legend{
+    font-family: var(--font-header);
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--vintage-plum);
+    margin-bottom: 1rem;
+}
+#adoption-form .form-submit{
+     width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    background-color: var(--warm-ivory);
+    
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+#adoption-form .form-submit{
+    background-color: var(--vintage-plum);
+    color: var(--warm-ivory);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: bold;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;;
+}
+#adoption-form .form-submit:hover{
+    background-color: var(--charcoal-brown);
+    transform: translateY(-3px);
+}
 /**===============VISIT + CONTACT PAGE========================**/
 
 /**Hero Section**/
