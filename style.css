@@ -1735,6 +1735,47 @@ header nav{
         right: auto;
         left: calc(50% + 0.5rem);
     }
+
+    /**===========Cafe Page=============**/
+
+    /**cafe cards**/
+    .menu-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    /**============Cat Info Page================/
+
+    /**Comfy Home**/
+    #comfy-home{
+        padding: 2rem;
+    }
+    .comfy-content{
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+    .comfy-content > img{
+        width: 220px;
+        height: 220px;
+        margin-left: 0;
+    }
+
+    /**===============Visit + Contact===================**/
+    .visit-section{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    .visit-info, 
+    #visit-form{
+        padding: 1.5rem;
+    }
+    .contact-section{
+        grid-template-columns: 1fr 1.5fr;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    .contact-info{
+        padding: 3rem 1.5rem;
+    }
 }
 
 /**----------MEDIA QUERY (S and Mobile)------------**/
