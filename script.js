@@ -3,7 +3,12 @@
 
 /**=========DARK & LIGHT MODE===========**/
 const themeSwitch = document.querySelector("#theme-switch");
+const savedTheme = localStorage.getItem("siteTheme");
 
+//user's previously selected theme
+if(savedTheme === "dark" || savedTheme === "light"){
+    document.body.dataset.theme = savedTheme;
+}
 if(themeSwitch){
     themeSwitch.addEventListener("click", function(){
         if(document.body.dataset.theme === "light"){
@@ -12,6 +17,8 @@ if(themeSwitch){
         else{
             document.body.dataset.theme = "light"
         }
+        //saves user's selected theme for future webpage visits
+        localStorage.setItem("siteTheme", document.body.dataset.theme);
     });
 }
 
@@ -142,6 +149,8 @@ if (catGrid) {
 /**Makes sure home page carousel has 3 cat cards visible at a time**/
 let currentIndex = 0;
 const catsVisible = 3;
+
+
 const catTrack = document.querySelector(".cat-track");
 if (catTrack) {
     function renderCats() {

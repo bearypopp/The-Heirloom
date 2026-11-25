@@ -1,3 +1,4 @@
+/**Kylie Koba**/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -107,7 +108,13 @@ body[data-theme = "dark"]{
     --charcoal-brown: #F0E6DE;
     --pastel-matcha: #39483E;
 }
+body[data-theme = "dark"] input,
+body[data-theme = "dark"] select,
+body[data-theme = "dark"] textarea{
+    color: var(--charcoal-brown);
+    color-scheme: dark;
 
+}
 h1, h2, h3{
     font-family: var(--font-header);
     font-weight: normal;
@@ -1578,3 +1585,161 @@ header nav{
     background-color: var(--charcoal-brown);
     transform: translateY(-3px);
 }
+
+/**=============RESPONSIVE MEDIA================**/
+/**Working backwards because I accidentally started for desktop first...**/
+
+
+/**----------MEDIA QUERY (L)------------**/
+/**we do max-width instead of min-width because im working backwards**/
+@media screen and (max-width: 1280px) {
+
+    /**=========Home Page=========**/
+    header{
+        padding: 1.5rem 2rem;
+        column-gap: 1rem;
+        grid-template-columns: 120px minmax(0, 1fr) 68px;
+        grid-template-rows: auto auto;
+        row-gap: 1rem;
+    }
+    header > img{
+        width: 120px;
+        grid-row: 1;
+    }
+    .web-title{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .web-title h1{
+        font-size: 2.5rem;
+    }
+    header nav{
+        grid-column: 1 /-1;
+        grid-row: 2;
+        justify-self: end;
+        width: auto;
+        min-width: 0;
+    }
+    .navList{
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .navList a{
+        font-size: 1.1rem;
+    }
+    .theme-switch{
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        margin-right: 0;
+    }
+}
+
+/**----------MEDIA QUERY (M)------------**/
+/**we do max-width instead of min-width because im working backwards**/
+@media screen and (max-width: 834px) {
+
+    /**=========Home Page=========**/
+    /**MTC Preview**/
+    .cat-track{
+        gap: 1rem;
+        justify-content: center;
+    }
+    .cats-preview .cat-card{
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 0;
+    }
+    .carousel-prev,
+    .carousel-next{
+        width: 40px;
+        height: 40px;
+    }
+    .cats-preview .cat-info p{
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    /**Cafe Preview**/
+    .cafe-preview{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .caf-img{
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+    .cafe-info{
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+    }
+    .cafe-hours{
+        grid-column: 1/ -1;
+        grid-row: 2;
+        border-left: none;
+        border-top: 1px solid var(--muted-sage);
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+
+    /**footer**/
+    .footer-content{
+        grid-template-columns: 1.2fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+    .footer-brand{
+        gap: 0.75rem;
+    }
+    .footer-logo{
+        width: 90px;
+    }
+    .footer-title{
+        font-size: 1.75rem;
+    }
+    .footer-hours,
+    .footer-socials{
+        border-left: 1px solid var(--charcoal-brown);
+    }
+    .footer-brand{
+        border-right: 1px solid var(--charcoal-brown);
+        border-right: 1px solid var(--charcoal-brown);
+        padding-right: 1rem;
+    }
+
+    /**==========MTC PAGE=============**/
+    .cat-grid{
+        grid-template-columns: repeat(2,minmax(0, 280px));
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    .img-prev,
+    .img-next{
+        top: auto;
+        bottom: -3rem;
+        transform: none;
+    }
+    .img-prev:hover,
+    .img-next:hover{
+        background-color: var(--pastel-matcha);
+        transform: scale(1.08);
+    }
+    .img-prev{
+        left: calc(50% - 2.75rem);
+    }
+    .img-next{
+        right: auto;
+        left: calc(50% + 0.5rem);
+    }
+}
+
+/**----------MEDIA QUERY (S and Mobile)------------**/
+/**we do max-width instead of min-width because im working backwards**/
+@media screen and (max-width: 600px) {
+    
+}
+
